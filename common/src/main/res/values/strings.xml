@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">mistriapp</string>
+
+    <!--    testing strings-->
+    <string name="divider_tag">divider</string>
+    <string name="name_tag">name</string>
+    <string name="icon_tag">icon</string>
+    <string name="value_tag">value</string>
+</resources>
