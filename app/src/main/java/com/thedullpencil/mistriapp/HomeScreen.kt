@@ -47,12 +47,12 @@ fun DateWidget() = Row(
 
 @Composable
 fun ProfileCard() = Card(Modifier.fillMaxWidth()) {
-    InfoItem("Selected Profile", icon = Icons.Filled.AccountCircle).ToInfoCard(false)
+    InfoItem(name = "Selected Profile", icon = Icons.Filled.AccountCircle).ToInfoCard(false)
 }
 
 @Composable
 fun RemindersSection() = InfoBlock(
     Modifier.fillMaxHeight(),
     "Reminders",
-    listOf(InfoItem("Empty"))
+    listOf(InfoItem(name = "Empty"))
 )

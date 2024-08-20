@@ -1,12 +1,16 @@
 package com.thedullpencil.villagers
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.thedullpencil.common.components.InfoBlock
 import com.thedullpencil.common.components.InfoItem
+import com.thedullpencil.common.ui.theme.Dimens
+import com.thedullpencil.common.ui.theme.toDp
 import com.thedullpencil.data.model.Villager
 
 @Composable
@@ -15,7 +19,7 @@ fun VillagerListScreen(
 ) {
     val villagerListUiState by villagerListViewModel.uiState.collectAsState()
     val sortedVillagerList = villagerListUiState.villagerList.sortedBy { it.name }
-    InfoBlock(header = "Villagers", items = sortedVillagerList.toInfoItemList())
+    InfoBlock(Modifier.padding(Dimens.PaddingL.toDp()), header = "Villagers", items = sortedVillagerList.toInfoItemList())
 }
 
 fun List<Villager>.toInfoItemList(): List<InfoItem> = this.map { InfoItem(name = it.name) }
