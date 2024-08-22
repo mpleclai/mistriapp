@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 //@HiltViewModel
-class VillagerListViewModel: ViewModel() {
-    private val _uiState = MutableStateFlow(VillagerListUiState())
-    val uiState: StateFlow<VillagerListUiState> = _uiState.asStateFlow()
+class VillagersViewModel: ViewModel() {
+    private val _uiState = MutableStateFlow(VillagersUiState())
+    val uiState: StateFlow<VillagersUiState> = _uiState.asStateFlow()
 }
-data class VillagerListUiState(
+data class VillagersUiState(
     val villagerList: List<Villager> = emptyList()
 )

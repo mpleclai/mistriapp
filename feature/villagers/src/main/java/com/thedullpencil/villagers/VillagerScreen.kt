@@ -14,11 +14,11 @@ import com.thedullpencil.common.ui.theme.toDp
 import com.thedullpencil.data.model.Villager
 
 @Composable
-fun VillagerListScreen(
-    villagerListViewModel: VillagerListViewModel = viewModel()
+fun VillagerScreen(
+    villagersViewModel: VillagersViewModel = viewModel()
 ) {
-    val villagerListUiState by villagerListViewModel.uiState.collectAsState()
-    val sortedVillagerList = villagerListUiState.villagerList.sortedBy { it.name }
+    val villagerUiState by villagersViewModel.uiState.collectAsState()
+    val sortedVillagerList = villagerUiState.villagerList.sortedBy { it.name }
     InfoBlock(Modifier.padding(Dimens.PaddingL.toDp()), header = "Villagers", items = sortedVillagerList.toInfoItemList())
 }
 

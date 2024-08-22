@@ -8,7 +8,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class VillagerListScreenTest {
+class VillagerScreenTest {
     private val testList = listOf(
         Villager("March"), Villager("Adeline"), Villager("Ryis")
     ).sortedBy { it.name }
@@ -19,7 +19,7 @@ class VillagerListScreenTest {
     @Test
     fun `list items display`() {
         composeTestRule.setContent {
-            VillagerListScreen(/*fake ui state*/)
+            VillagerScreen(/*fake ui state*/)
         }
     }
 }

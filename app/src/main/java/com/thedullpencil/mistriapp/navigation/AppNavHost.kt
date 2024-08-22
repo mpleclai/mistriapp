@@ -9,7 +9,7 @@ import androidx.navigation.compose.composable
 import com.thedullpencil.mistriapp.HomeScreen
 import com.thedullpencil.mistriapp.navigation.NavigationItem.Home
 import com.thedullpencil.mistriapp.navigation.NavigationItem.Villagers
-import com.thedullpencil.villagers.VillagerListScreen
+import com.thedullpencil.villagers.VillagerScreen
 
 @Composable
 fun AppNavHost(
@@ -26,4 +26,4 @@ fun AppNavHost(
 }
 
 fun NavGraphBuilder.homeNavGraph() = composable(route = Home.route){ HomeScreen()}
-fun NavGraphBuilder.villagerNavGraph() = composable(Villagers.route) { VillagerListScreen()}
+fun NavGraphBuilder.villagerNavGraph() = composable(Villagers.route) { VillagerScreen()}
