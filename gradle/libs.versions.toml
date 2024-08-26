@@ -7,13 +7,16 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
-composeBom = "2024.04.01"
+composeBom = "2024.08.00"
 navigationRuntimeKtx = "2.7.7"
 navigationCompose = "2.7.7"
 appcompat = "1.6.1"
 lifecycleViewmodelCompose = "2.8.4"
 material = "1.10.0"
 robolectric = "4.13"
+androidGradlePlugin = "8.4.2"
+roborazzi = "1.6.0"
+composeGradlePlugin = "2.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,10 +39,22 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
+roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi" }
 
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "composeGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 
+# Plugins defined by this project
+mistriapp-android-application = { id = "mistriapp.android.application", version = "unspecified" }
+mistriapp-android-application-compose = { id = "mistriapp.android.application.compose", version = "unspecified" }
+mistriapp-android-feature = { id = "mistriapp.android.feature", version = "unspecified" }
+mistriapp-android-library = { id = "mistriapp.android.library", version = "unspecified" }
+mistriapp-android-library-compose = { id = "mistriapp.android.library.compose", version = "unspecified" }
