@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.mistriapp.android.application)
+//    alias(libs.plugins.ksp)
+//    alias(libs.plugins.hilt)
 }
 
 android {
@@ -63,6 +65,18 @@ dependencies {
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.ui.tooling)
     implementation(libs.material)
+    implementation(libs.hilt.android)
+//    kapt(libs.hilt.compiler)
+//    implementation(libs.compose.)
+//    implementation(libs.hilt.core)
+//    implementation(libs.hilt.ext.compiler)
+//    implementation(libs.hilt.ext.work)
+//    implementation(libs.hilt.compiler)
+//    implementation(libs.hilt.android)
+    implementation(libs.androidx.work)
+    implementation(libs.ksp.gradlePlugin)
+    implementation(libs.androidx.adaptive.android)
+    implementation(libs.androidx.material3.adaptive.navigation.suite.android)
 
     testImplementation(libs.androidx.ui.test.junit4)
     testImplementation(libs.junit)

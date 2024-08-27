@@ -29,6 +29,11 @@ dependencies {
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.ui.tooling)
     implementation(libs.material)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":domain"))
 
     testImplementation(libs.androidx.ui.test.junit4)
     testImplementation(libs.junit)
