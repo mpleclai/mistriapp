@@ -1,8 +1,9 @@
-import SortField.NAME
+package com.thedullpencil.domain
+
+import com.thedullpencil.domain.SortField.NAME
 import com.thedullpencil.data.model.Villager
 import com.thedullpencil.data.repository.VillagerRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.transform
 import javax.inject.Inject
 

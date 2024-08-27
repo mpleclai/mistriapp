@@ -1,11 +1,11 @@
 package com.thedullpencil.villagers
 
-import GetVillagerListUseCase
-import SortField
+import com.thedullpencil.domain.SortField
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thedullpencil.data.model.Villager
+import com.thedullpencil.domain.GetVillagerListUseCase
 import com.thedullpencil.villagers.navigation.VILLAGER_NAME_ARG
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
