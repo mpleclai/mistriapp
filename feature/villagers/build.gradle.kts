@@ -1,46 +1,25 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.mistriapp.android.feature)
+    alias(libs.plugins.mistriapp.android.library.compose)
 }
 
 android {
     namespace = "com.thedullpencil.villagers"
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.2"
-    }
 }
 
 dependencies {
     implementation(project(":data"))
     implementation(project(":common"))
+    implementation(project(":domain"))
     implementation(platform(libs.androidx.compose.bom))
-
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.navigation.runtime.ktx)
-    implementation(libs.androidx.ui.tooling)
-    implementation(libs.material)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.lifecycle.runtime.compose.android)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(project(":domain"))
-
-    testImplementation(libs.androidx.ui.test.junit4)
-    testImplementation(libs.junit)
-    testImplementation(libs.robolectric)
-
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.junit)
-
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.hilt.ext.compiler)
+    implementation(libs.javax.inject)
 }
