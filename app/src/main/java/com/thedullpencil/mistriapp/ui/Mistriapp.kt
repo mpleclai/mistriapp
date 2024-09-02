@@ -143,11 +143,11 @@ private fun TopAppBar(
     onNavClick: () -> Unit
 ) = CenterAlignedTopAppBar(
     title = { Text("Mistria Helper", maxLines = 1, overflow = Ellipsis) },
-    navigationIcon = {
-        IconButton(onNavClick) {
-            Icon(Filled.Menu, contentDescription = "Localized description")
-        }
-    },
+//    navigationIcon = {
+//        IconButton(onNavClick) {
+//            Icon(Filled.Menu, contentDescription = "Localized description")
+//        }
+//    },
     actions = {
         IconButton(onClick = {/* do something */ }) {
             Icon(Filled.AccountCircle, contentDescription = "Localized description")

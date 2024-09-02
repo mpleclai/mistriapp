@@ -4,6 +4,7 @@
     <!--    Navigation Items-->
     <string name="nav_home">Daily Reminders</string>
     <string name="nav_villagers">Villagers</string>
+    <string name="nav_museum">Villagers</string>
 
     <!--    testing strings-->
     <string name="divider_tag">divider</string>
