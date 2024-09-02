@@ -41,6 +41,7 @@ dependencies {
     implementation(project(":feature:villagers"))
     implementation(project(":feature:home"))
     implementation(project(":feature:museum"))
+    implementation(project(":feature:fishing"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

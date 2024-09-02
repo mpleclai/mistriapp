@@ -10,11 +10,14 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.NavDestination
 import androidx.navigation.navOptions
+import com.thedullpencil.fishing.navigation.FISHING_ROUTE
+import com.thedullpencil.fishing.navigation.navigateToFishing
 import com.thedullpencil.home.navigation.HOME_ROUTE
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Home
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Villagers
 import com.thedullpencil.home.navigation.navigateToHome
+import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Fishing
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Museum
 import com.thedullpencil.museum.navigation.MUSEUM_ROUTE
 import com.thedullpencil.museum.navigation.navigateToMuseum
@@ -37,6 +40,7 @@ class AppState(val navController: NavHostController) {
             HOME_ROUTE -> Home
             VILLAGERS_ROUTE -> Villagers
             MUSEUM_ROUTE -> Museum
+            FISHING_ROUTE -> Fishing
             else -> null
         }
 
@@ -64,6 +68,7 @@ class AppState(val navController: NavHostController) {
                 Home -> navController.navigateToHome(topLevelNavOptions)
                 Villagers -> navController.navigateToVillagers(null, topLevelNavOptions)
                 Museum -> navController.navigateToMuseum(topLevelNavOptions)
+                Fishing -> navController.navigateToFishing(topLevelNavOptions)
             }
         }
     }

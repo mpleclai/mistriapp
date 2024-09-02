@@ -3,6 +3,7 @@ package com.thedullpencil.mistriapp.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.thedullpencil.fishing.navigation.fishingScreen
 import com.thedullpencil.home.navigation.HOME_ROUTE
 import com.thedullpencil.home.navigation.homeScreen
 import com.thedullpencil.mistriapp.ui.AppState
@@ -24,5 +25,6 @@ fun AppNavHost(
         homeScreen()
         villagersScreen{}
         museumScreen()
+        fishingScreen()
     }
 }
