@@ -29,6 +29,7 @@ import androidx.compose.material3.adaptive.WindowAdaptiveInfo
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScope
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
@@ -121,7 +122,7 @@ private fun CustomNavigationSuiteScaffold(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
-    val layoutType = NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(windowAdaptiveInfo)
+    val layoutType = calculateFromAdaptiveInfo(windowAdaptiveInfo)
     NavigationSuiteScaffold(
         navigationSuiteItems = {
             MistriappNavigationSuiteScope(this).run(navigationSuiteItems)
