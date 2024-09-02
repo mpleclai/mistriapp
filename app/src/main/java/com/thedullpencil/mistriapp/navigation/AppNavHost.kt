@@ -3,6 +3,8 @@ package com.thedullpencil.mistriapp.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.thedullpencil.home.navigation.HOME_ROUTE
+import com.thedullpencil.home.navigation.homeScreen
 import com.thedullpencil.mistriapp.ui.AppState
 import com.thedullpencil.villagers.navigation.villagersScreen
 
