@@ -39,6 +39,7 @@ configurations {
 dependencies {
     implementation(project(":common"))
     implementation(project(":feature:villagers"))
+    implementation(project(":feature:home"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)

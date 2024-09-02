@@ -1,4 +1,4 @@
-package com.thedullpencil.mistriapp
+package com.thedullpencil.home
 
 import org.junit.Test
 

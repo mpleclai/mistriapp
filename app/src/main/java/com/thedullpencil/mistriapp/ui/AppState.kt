@@ -3,20 +3,18 @@ package com.thedullpencil.mistriapp.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.util.trace
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import kotlinx.coroutines.CoroutineScope
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.NavDestination
 import androidx.navigation.navOptions
-import com.thedullpencil.mistriapp.navigation.HOME_ROUTE
+import com.thedullpencil.home.navigation.HOME_ROUTE
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Home
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Villagers
-import com.thedullpencil.mistriapp.navigation.navigateToHome
+import com.thedullpencil.home.navigation.navigateToHome
 import com.thedullpencil.villagers.navigation.VILLAGERS_ROUTE
 import com.thedullpencil.villagers.navigation.navigateToVillagers
 

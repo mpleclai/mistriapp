@@ -1,4 +1,4 @@
-package com.thedullpencil.mistriapp
+package com.thedullpencil.home
 
 import androidx.compose.foundation.layout.Arrangement.SpaceEvenly
 import androidx.compose.foundation.layout.Column
