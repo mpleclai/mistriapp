@@ -15,24 +15,25 @@ import androidx.compose.material.icons.Icons.Filled
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.ModalDrawerSheet
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults.pinnedScrollBehavior
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.material3.adaptive.WindowAdaptiveInfo
-import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScope
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -43,35 +44,43 @@ import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
-
-@Composable
-fun Mistriapp(
-    appState: AppState,
-    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
-) = Mistriapp(appState, windowAdaptiveInfo) {}
+import kotlinx.coroutines.launch
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-internal fun Mistriapp(
+fun Mistriapp(
     appState: AppState,
-    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
-    onTopAppBarActionClick: () -> Unit,
+//    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
     val currentDestination = appState.currentDestination
     val scrollBehavior = pinnedScrollBehavior(rememberTopAppBarState())
-    CustomNavigationSuiteScaffold(
-        windowAdaptiveInfo = windowAdaptiveInfo,
-        navigationSuiteItems = {
-            appState.topLevelDestinations.forEach { destination ->
-                val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
-                item(selected = selected,
-                    onClick = { appState.navigateToTopLevelDestination(destination) },
-                    icon = { Icon(destination.icon, null) },
-                    label = { Text(stringResource(destination.title)) }
-                )
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+    val onNavClick: () -> Unit = {
+        scope.launch { drawerState.apply { if (isClosed) open() else close() } }
+    }
+
+    ModalNavigationDrawer(
+        drawerState = drawerState,
+        drawerContent = {
+            ModalDrawerSheet {
+                DrawerTitle("Drawer Title")
+                HorizontalDivider()
+                appState.topLevelDestinations.forEach { destination ->
+                    val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+                    NavigationDrawerItem(
+                        label = { Text(stringResource(destination.title)) },
+                        icon = { Icon(destination.icon, null) },
+                        selected = selected,
+                        onClick = {
+                            appState.navigateToTopLevelDestination(destination)
+                            scope.launch { drawerState.close() }
+                        }
+                    )
+                }
             }
         }
-    ) { ScaffoldContent(appState, scrollBehavior, onTopAppBarActionClick) }
+    ) { ScaffoldContent(appState, scrollBehavior, onNavClick) }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -116,24 +125,6 @@ private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLev
     this?.hierarchy?.any { it.route?.contains(destination.name, true) ?: false } ?: false
 
 @Composable
-private fun CustomNavigationSuiteScaffold(
-    windowAdaptiveInfo: WindowAdaptiveInfo,
-    navigationSuiteItems: MistriappNavigationSuiteScope.() -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable () -> Unit,
-) {
-    val layoutType = calculateFromAdaptiveInfo(windowAdaptiveInfo)
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            MistriappNavigationSuiteScope(this).run(navigationSuiteItems)
-        },
-        layoutType = layoutType,
-        containerColor = Color.Transparent,
-        modifier = modifier,
-    ) { content() }
-}
-
-@Composable
 private fun DrawerTitle(text: String) =
     Text(text, modifier = Modifier.padding(PaddingL.toDp()), style = typography.titleLarge)
 
@@ -144,11 +135,11 @@ private fun TopAppBar(
     onNavClick: () -> Unit
 ) = CenterAlignedTopAppBar(
     title = { Text("Mistria Helper", maxLines = 1, overflow = Ellipsis) },
-//    navigationIcon = {
-//        IconButton(onNavClick) {
-//            Icon(Filled.Menu, contentDescription = "Localized description")
-//        }
-//    },
+    navigationIcon = {
+        IconButton(onNavClick) {
+            Icon(Filled.Menu, contentDescription = "Localized description")
+        }
+    },
     actions = {
         IconButton(onClick = {/* do something */ }) {
             Icon(Filled.AccountCircle, contentDescription = "Localized description")
@@ -160,24 +151,3 @@ private fun TopAppBar(
     ),
     scrollBehavior = scrollBehavior,
 )
-
-/**
- * A wrapper around [NavigationSuiteScope] to declare navigation items.
- */
-class MistriappNavigationSuiteScope internal constructor(
-    private val navigationSuiteScope: NavigationSuiteScope,
-) {
-    fun item(
-        selected: Boolean,
-        onClick: () -> Unit,
-        modifier: Modifier = Modifier,
-        icon: @Composable () -> Unit,
-        label: @Composable (() -> Unit)? = null,
-    ) = navigationSuiteScope.item(
-        selected = selected,
-        onClick = onClick,
-        icon = { icon() },
-        label = label,
-        modifier = modifier,
-    )
-}
