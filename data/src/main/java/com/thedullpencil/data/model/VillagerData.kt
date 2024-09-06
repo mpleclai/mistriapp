@@ -1,12 +1,9 @@
 package com.thedullpencil.data.model
 
 
-data class Villager(
+data class VillagerData(
     val name: String,
 //    val birthday: Pair<Season, Int>,
 ) {
 
 }
-
-enum class Season { Spring, Summer, Fall, Winter }
-

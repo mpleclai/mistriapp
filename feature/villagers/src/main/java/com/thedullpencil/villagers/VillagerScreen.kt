@@ -4,23 +4,36 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.common.components.InfoBlock
 import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
-import com.thedullpencil.data.model.Villager
+import com.thedullpencil.domain.model.Villager
 
 @Composable
 fun VillagerScreen(
-    uiState: VillagersUiState,
+//    uiState: VillagersUiState,
     onVillagerClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-) = when (uiState) {
-    is VillagersUiState.Loading -> CircularProgressIndicator()
-    is VillagersUiState.VillagersInfo -> VillagerList(uiState.villagers, onVillagerClick, modifier)
-    is VillagersUiState.Empty -> VillagerList(emptyList(), onVillagerClick)
+    viewModel: VillagersViewModel = hiltViewModel(),
+) {
+    val villagersUiState by viewModel.uiState.collectAsState()
+
+    when (villagersUiState) {
+        is VillagersUiState.VillagersInfo -> VillagerList(
+            (villagersUiState as VillagersUiState.VillagersInfo).villagers,
+            onVillagerClick,
+            modifier
+        )
+
+        is VillagersUiState.Loading -> CircularProgressIndicator()
+        is VillagersUiState.Empty -> VillagerList(emptyList(), onVillagerClick)
+    }
 }
 
 @Preview

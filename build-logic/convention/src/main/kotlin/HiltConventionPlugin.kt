@@ -11,12 +11,7 @@ class HiltConventionPlugin : Plugin<Project> {
             pluginManager.apply("com.google.devtools.ksp")
             dependencies {
                 add("ksp", libs.findLibrary("hilt.compiler").get())
-            }
-
-            pluginManager.withPlugin("org.jetbrains.kotlin.jvm") {
-                dependencies {
-                    add("implementation", libs.findLibrary("hilt.core").get())
-                }
+                add("implementation", libs.findLibrary("hilt.core").get())
             }
 
             /** Add support for Android modules, based on [AndroidBasePlugin] */

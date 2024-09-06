@@ -1,11 +1,11 @@
 package com.thedullpencil.villagers
 
-import com.thedullpencil.domain.SortField
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.thedullpencil.data.model.Villager
-import com.thedullpencil.domain.GetVillagerListUseCase
+import com.thedullpencil.domain.model.Villager
+import com.thedullpencil.domain.usecase.GetVillagerListUseCase
+import com.thedullpencil.domain.usecase.SortField
 import com.thedullpencil.villagers.navigation.VILLAGER_NAME_ARG
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -16,8 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VillagersViewModel @Inject constructor(
+    getVillagerList: GetVillagerListUseCase,
     private val savedStateHandle: SavedStateHandle,
-    getVillagerList: GetVillagerListUseCase
 ) : ViewModel() {
 
     val selectedVillagerName: StateFlow<String?> =
