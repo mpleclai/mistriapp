@@ -24,10 +24,10 @@ class InfoItemTest {
     private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
 
     /* Test Strings */
-    private val name = context.getString(R.string.name_tag)
-    private val value = context.getString(R.string.value_tag)
-    private val divider = context.getString(R.string.divider_tag)
-    private val icon = context.getString(R.string.icon_tag)
+    private val name = context.getString(R.string.common_name_tag)
+    private val value = context.getString(R.string.common_value_tag)
+    private val divider = context.getString(R.string.common_divider_tag)
+    private val icon = context.getString(R.string.common_icon_tag)
 
     /* Test Items */
     private val emptyItem = InfoItem()

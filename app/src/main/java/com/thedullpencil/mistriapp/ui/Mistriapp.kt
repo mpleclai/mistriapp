@@ -1,5 +1,6 @@
 package com.thedullpencil.mistriapp.ui
 
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -64,7 +65,6 @@ fun Mistriapp(
         drawerContent = {
             ModalDrawerSheet {
                 DrawerTitle("Drawer Title")
-                HorizontalDivider()
                 appState.topLevelDestinations.forEach { destination ->
                     val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
                     NavigationDrawerItem(
@@ -74,7 +74,7 @@ fun Mistriapp(
                         onClick = {
                             appState.navigateToTopLevelDestination(destination)
                             scope.launch { drawerState.close() }
-                        }
+                        },
                     )
                 }
             }

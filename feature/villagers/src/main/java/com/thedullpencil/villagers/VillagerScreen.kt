@@ -20,7 +20,7 @@ fun VillagerScreen(
 //    uiState: VillagersUiState,
     onVillagerClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: VillagersViewModel = hiltViewModel(),
+    viewModel: VillagerViewModel = hiltViewModel(),
 ) {
     val villagersUiState by viewModel.uiState.collectAsState()
 

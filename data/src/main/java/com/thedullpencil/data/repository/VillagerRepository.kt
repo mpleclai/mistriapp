@@ -1,7 +1,6 @@
 package com.thedullpencil.data.repository
 
 import com.thedullpencil.data.model.VillagerData
-import kotlinx.coroutines.flow.Flow
 
 interface VillagerRepository {
     /**

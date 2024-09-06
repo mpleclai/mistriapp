@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import com.thedullpencil.common.R
-import com.thedullpencil.common.R.string.divider_tag
+import com.thedullpencil.common.R.string.common_divider_tag
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
 
@@ -42,8 +42,8 @@ fun InfoItem.ToInfoCard(showDivider: Boolean = true) {
 private fun Divider() = HorizontalDivider(
     Modifier
         .padding(horizontal = PaddingL.toDp())
-        .testTag(stringResource(divider_tag))
+        .testTag(stringResource(common_divider_tag))
 )
 
 @Composable
-private fun Modifier.iconTag() = testTag(stringResource(R.string.icon_tag))
+private fun Modifier.iconTag() = testTag(stringResource(R.string.common_icon_tag))

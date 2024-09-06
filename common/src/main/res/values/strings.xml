@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">mistriapp</string>
+    <string name="common_app_name">mistriapp</string>
 
     <!--    Navigation Items-->
-    <string name="nav_home">Daily Reminders</string>
-    <string name="nav_villagers">Villagers</string>
-    <string name="nav_museum">Villagers</string>
-    <string name="nav_fishing">Fishing</string>
+    <string name="common_nav_home">Daily Reminders</string>
+    <string name="common_nav_villagers">Villagers</string>
+    <string name="common_nav_museum">Museum</string>
+    <string name="common_nav_fishing">Fishing</string>
 
     <!--    testing strings-->
-    <string name="divider_tag">divider</string>
-    <string name="name_tag">name</string>
-    <string name="icon_tag">icon</string>
-    <string name="value_tag">value</string>
+    <string name="common_divider_tag">divider</string>
+    <string name="common_name_tag">name</string>
+    <string name="common_icon_tag">icon</string>
+    <string name="common_value_tag">value</string>
 </resources>

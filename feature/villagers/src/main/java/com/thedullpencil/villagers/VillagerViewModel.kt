@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
-class VillagersViewModel @Inject constructor(
+class VillagerViewModel @Inject constructor(
     getVillagerList: GetVillagerListUseCase,
     private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
