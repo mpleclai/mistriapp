@@ -35,7 +35,6 @@ import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow.Companion.Ellipsis
 import androidx.navigation.NavDestination
@@ -93,7 +92,6 @@ private fun ScaffoldContent(
     val destination = appState.currentTopLevelDestination
     val shouldShowTopAppBar = destination != null
     Scaffold(
-        containerColor = Color.Transparent,
         contentColor = colorScheme.onBackground,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
     ) { padding ->

@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val appState = rememberAppState()
-            MistriappTheme {
+            MistriappTheme(dynamicColor = false) {
                 Mistriapp(appState)
             }
         }
