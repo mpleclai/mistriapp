@@ -14,6 +14,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(project(":domain"))
 
     testImplementation(libs.androidx.compose.ui.test)
     testImplementation(libs.robolectric)

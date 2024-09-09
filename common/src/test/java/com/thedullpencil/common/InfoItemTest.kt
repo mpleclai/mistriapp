@@ -10,6 +10,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.components.ToInfoCard
 import org.junit.Rule
@@ -21,13 +22,13 @@ class InfoItemTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    private val context: Context = InstrumentationRegistry.getInstrumentation().targetContext
+    private val context: Context = getInstrumentation().targetContext
 
     /* Test Strings */
-    private val name = context.getString(R.string.name_tag)
-    private val value = context.getString(R.string.value_tag)
-    private val divider = context.getString(R.string.divider_tag)
-    private val icon = context.getString(R.string.icon_tag)
+    private val name = context.getString(R.string.common_name_tag)
+    private val value = context.getString(R.string.common_value_tag)
+    private val divider = context.getString(R.string.common_divider_tag)
+    private val icon = context.getString(R.string.common_icon_tag)
 
     /* Test Items */
     private val emptyItem = InfoItem()

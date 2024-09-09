@@ -5,7 +5,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-internal class VillagerRepositoryImpl @Inject constructor() : VillagerRepository {
+class VillagerRepositoryImpl @Inject constructor() : VillagerRepository {
 
     //TODO -  temporary sample data implementation; replace with actual data input
     override suspend fun getVillagers(): List<VillagerData> = listOf(
