@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_select_profile">Select or Add Profile</string>
+    <string name="feature_home_increment_date">Increment Date</string>
+    <string name="feature_home_decrement_date">Decrement Date</string>
+    <string name="feature_home_selected_date">Selected Date</string>
+    <string name="feature_home_reminders">Reminders</string>
+    <string name="feature_home_empty">Empty</string>
+</resources>

@@ -7,17 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.common.components.InfoBlock
 import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
 import com.thedullpencil.domain.model.Villager
+import com.thedullpencil.villagers.VillagerViewState.Empty
+import com.thedullpencil.villagers.VillagerViewState.Loading
+import com.thedullpencil.villagers.VillagerViewState.VillagersInfo
 
 @Composable
 fun VillagerScreen(
-//    uiState: VillagersUiState,
     onVillagerClick: (String) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: VillagerViewModel = hiltViewModel(),
@@ -25,23 +26,12 @@ fun VillagerScreen(
     val villagersUiState by viewModel.uiState.collectAsState()
 
     when (villagersUiState) {
-        is VillagersUiState.VillagersInfo -> VillagerList(
-            (villagersUiState as VillagersUiState.VillagersInfo).villagers,
-            onVillagerClick,
-            modifier
-        )
+        is VillagersInfo ->
+            VillagerList((villagersUiState as VillagersInfo).villagers, onVillagerClick, modifier)
 
-        is VillagersUiState.Loading -> CircularProgressIndicator()
-        is VillagersUiState.Empty -> VillagerList(emptyList(), onVillagerClick)
+        is Loading -> CircularProgressIndicator()
+        is Empty -> VillagerList(emptyList(), onVillagerClick)
     }
-}
-
-@Preview
-@Composable
-fun VillagerListPreview() {
-    val villagerList =
-        listOf(Villager("March"), Villager("Adeline"), Villager("Ryis")).sortedBy { it.name }
-    InfoBlock(header = "Villagers", items = villagerList.toInfoItemList({}))
 }
 
 @Composable

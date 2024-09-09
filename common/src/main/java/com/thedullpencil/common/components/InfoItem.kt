@@ -5,6 +5,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults.colors
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -21,8 +22,8 @@ import com.thedullpencil.common.ui.theme.toDp
 @Immutable
 data class InfoItem(
     val modifier: Modifier = Modifier,
-    val name: String? = "",
-    val value: String? = "",
+    val name: String? = null,
+    val value: String? = null,
     val icon: ImageVector? = null
 )
 
@@ -33,7 +34,10 @@ fun InfoItem.ToInfoCard(showDivider: Boolean = true) {
         modifier = modifier,
         leadingContent = { icon?.let { Icon(it, null, Modifier.iconTag()) } },
         trailingContent = { value?.let { Text(it) } },
-        colors = colors(containerColor = Transparent)
+        colors = colors(
+            leadingIconColor = colorScheme.primary,
+            containerColor = Transparent
+        )
     )
     if (showDivider) Divider()
 }
