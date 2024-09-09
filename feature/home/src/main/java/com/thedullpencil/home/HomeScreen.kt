@@ -8,21 +8,24 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.Icons.AutoMirrored.Filled
+import androidx.compose.material.icons.Icons.AutoMirrored
+import androidx.compose.material.icons.Icons.Filled
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.filledTonalButtonColors
 import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.common.components.InfoBlock
@@ -30,7 +33,15 @@ import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.components.ToInfoCard
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
-import com.thedullpencil.domain.model.Season
+import com.thedullpencil.core.util.toDateString
+import com.thedullpencil.home.HomeUiState.Empty
+import com.thedullpencil.home.HomeUiState.HomeInfo
+import com.thedullpencil.home.R.string.feature_home_decrement_date
+import com.thedullpencil.home.R.string.feature_home_empty
+import com.thedullpencil.home.R.string.feature_home_increment_date
+import com.thedullpencil.home.R.string.feature_home_reminders
+import com.thedullpencil.home.R.string.feature_home_select_profile
+import com.thedullpencil.home.R.string.feature_home_selected_date
 
 @Preview
 @Composable
@@ -38,37 +49,64 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val homeUiState by viewModel.uiState.collectAsState()
 
     Column(Modifier.padding(PaddingL.toDp())) {
-        DateWidget(homeUiState)
-        ProfileCard()
-        Spacer(Modifier.padding(PaddingL.toDp()))
-        RemindersSection()
+        when (homeUiState) {
+            is Empty -> {
+                //        if(viewModel.selectedProfile == null){
+                val selectProfile = stringResource(feature_home_select_profile)
+                Card(Modifier.fillMaxWidth()) {
+                    InfoItem(name = selectProfile, icon = Filled.Add).ToInfoCard(false)
+                }
+            }
+
+            is HomeInfo -> {
+                with(viewModel) {
+                    DateWidget(homeUiState as HomeInfo)
+                    ProfileCard(homeUiState as HomeInfo)
+                    Spacer(Modifier.padding(PaddingL.toDp()))
+                    RemindersSection()
+                }
+            }
+
+            else -> CircularProgressIndicator()
+        }
     }
 }
 
 @Composable
-fun DateWidget(homeUiState: HomeUiState) = Row(
+fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
+//fun HomeViewModel.DateWidget() = Row(
     Modifier
         .fillMaxWidth()
         .padding(PaddingL.toDp()),
     horizontalArrangement = SpaceEvenly,
-    verticalAlignment = Alignment.CenterVertically
+    verticalAlignment = CenterVertically
 ) {
-    DateWidgetButton(onClick = { /*TODO*/ }) {
-        Icon(Filled.KeyboardArrowLeft, DECREMENT_DATE)
-    }
-    when (homeUiState) {
-        is HomeUiState.HomeInfo -> Text(
-            HomeUiState.HomeInfo().date.toDateString(),
-            Modifier.padding(horizontal = PaddingL.toDp())
+    DateWidgetButton(onClick = {
+//        setDate(selectedDate.getPreviousDay())
+    }) {
+        Icon(
+            AutoMirrored.Filled.KeyboardArrowLeft,
+            stringResource(feature_home_decrement_date)
         )
-
-        else -> Text(SELECTED_DATE, Modifier.padding(horizontal = PaddingL.toDp()))
     }
-
-    DateWidgetButton(onClick = { /*TODO*/ }) {
-        Icon(Filled.KeyboardArrowRight, INCREMENT_DATE)
+    Text(
+        homeUiState.selectedProfile.currentDate.toDateString(),
+        Modifier.padding(horizontal = PaddingL.toDp())
+    )
+//    Text(selectedDate.toDateString(), Modifier.padding(horizontal = PaddingL.toDp()))
+    DateWidgetButton(onClick = {
+//        setDate(selectedDate.getNextDay())
+    }) {
+        Icon(
+            AutoMirrored.Filled.KeyboardArrowRight,
+            stringResource(feature_home_increment_date)
+        )
     }
 }
+
+@Composable
+private fun DefaultSelectedDateText() =
+    Text(stringResource(feature_home_selected_date), Modifier.padding(horizontal = PaddingL.toDp()))
 
 @Composable
 fun DateWidgetButton(onClick: () -> Unit, content: @Composable () -> Unit) =
@@ -80,21 +118,16 @@ fun DateWidgetButton(onClick: () -> Unit, content: @Composable () -> Unit) =
 
 
 @Composable
-fun ProfileCard() = Card(Modifier.fillMaxWidth()) {
-    InfoItem(name = SELECTED_PROFILE, icon = Icons.Filled.AccountCircle).ToInfoCard(false)
+fun HomeViewModel.ProfileCard(homeUiState: HomeInfo) = Card(Modifier.fillMaxWidth()) {
+    val name = homeUiState.selectedProfile.name
+//    val name = this@ProfileCard.selectedProfile?.name
+    InfoItem(name = name, icon = Filled.AccountCircle).ToInfoCard(false)
+
 }
 
 @Composable
-fun RemindersSection() =
-    InfoBlock(Modifier.fillMaxHeight(), REMINDERS, listOf(InfoItem(name = EMPTY)))
-
-/** TODO - Move to R.string file for Home feature */
-private const val SELECTED_PROFILE = "Selected Profile"
-private const val INCREMENT_DATE = "Increment Date"
-private const val DECREMENT_DATE = "Decrement Date"
-private const val SELECTED_DATE = "Selected Date"
-private const val REMINDERS = "Reminders"
-private const val EMPTY = "Empty"
-
-/** TODO - Move to DateUtil file under common */
-fun Pair<Season, Int>.toDateString(): String = "${this.first} ${this.second}"
+fun RemindersSection() = InfoBlock(
+    modifier = Modifier.fillMaxHeight(),
+    header = stringResource(id = feature_home_reminders),
+    items = listOf(InfoItem(name = stringResource(id = feature_home_empty)))
+)
