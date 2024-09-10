@@ -2,6 +2,7 @@ package com.thedullpencil.domain.usecase
 
 import com.thedullpencil.core.util.MistriappDate
 import com.thedullpencil.core.util.Season.Spring
+import com.thedullpencil.core.util.getMistriappDate
 import com.thedullpencil.data.model.VillagerData
 import com.thedullpencil.data.repository.VillagerRepository
 import com.thedullpencil.domain.model.Villager
@@ -21,7 +22,12 @@ class GetVillagerListUseCase @Inject constructor(
     operator fun invoke(sortBy: SortField = NAME): Flow<List<Villager>> = flow {
         emit(
             villagersRepository.getVillagers().map { villagerData: VillagerData ->
-                with(villagerData) { Villager(name = name, birthday = MistriappDate(Spring, 1)) }
+                with(villagerData) {
+                    Villager(
+                        name,
+                        getMistriappDate(birthdaySeason, birthdayDay) ?: MistriappDate(Spring, 1)
+                    )
+                }
             }.sortedBy {
                 when (sortBy) {
                     NAME -> it.name

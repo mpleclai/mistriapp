@@ -20,7 +20,6 @@ class GetProfileUseCase @Inject constructor(
     operator fun invoke(id: String?): Flow<Profile> = if (!id.isNullOrEmpty()) {
         flow {
             emit(
-
                 with(profileRepository.getProfileData(id)) {
                     Profile(
                         userId = userId,

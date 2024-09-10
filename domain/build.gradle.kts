@@ -13,4 +13,9 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":data"))
     implementation(project(":core"))
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlinTest)
 }

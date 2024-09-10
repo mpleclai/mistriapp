@@ -9,20 +9,20 @@ class VillagerRepositoryImpl @Inject constructor() : VillagerRepository {
 
     //TODO -  temporary sample data implementation; replace with actual data input
     override suspend fun getVillagers(): List<VillagerData> = listOf(
-        VillagerData("Hayden"),
-        VillagerData("Adeline"),
-        VillagerData("Baylor"),
-        VillagerData("Calderus"),
-        VillagerData("Celine"),
-        VillagerData("Darcy"),
-        VillagerData("March"),
-        VillagerData("Errol"),
-        VillagerData("Hemlock"),
-        VillagerData("Josephine"),
-        VillagerData("Reina"),
+        VillagerData("Hayden", "Spring", 1),
+        VillagerData("Adeline", "Spring", 1),
+        VillagerData("Baylor", "Spring", 1),
+        VillagerData("Calderus", "Spring", 1),
+        VillagerData("Celine", "Spring", 1),
+        VillagerData("Darcy", "Spring", 1),
+        VillagerData("March", "Spring", 1),
+        VillagerData("Errol", "Spring", 1),
+        VillagerData("Hemlock", "Spring", 1),
+        VillagerData("Josephine", "Spring", 1),
+        VillagerData("Reina", "Spring", 1),
     )
 
-    override suspend fun getVillager(name: String): VillagerData {
-        TODO("Not yet implemented")
-    }
+    //TODO -  temporary sample data implementation; replace with actual data input
+    override suspend fun getVillager(name: String): VillagerData =
+        VillagerData("March", "Spring", 1)
 }
