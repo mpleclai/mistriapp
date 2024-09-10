@@ -8,9 +8,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":common"))
-    implementation(project(":domain"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
@@ -22,4 +19,11 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.ext.compiler)
     implementation(libs.javax.inject)
+
+
+    testImplementation(libs.androidx.compose.ui.test)
+    testImplementation(libs.robolectric)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.androidx.compose.ui.test)
+    androidTestImplementation(libs.hilt.android.testing)
 }
