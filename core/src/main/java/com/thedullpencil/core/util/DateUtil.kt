@@ -21,6 +21,8 @@ fun MistriappDate.getNextDay(): MistriappDate = if (second.notLastDayOfMonth()) 
     MistriappDate(first.getNextSeason(), FIRST_DAY)
 }
 
+fun MistriappDate.toDateString(): String = "${this.first} ${this.second}"
+
 fun Season.getNextSeason(): Season = when (this) {
     Spring -> Summer
     Summer -> Fall
@@ -38,10 +40,8 @@ fun Season.getPreviousSeason(): Season = when (this) {
 fun Int.notLastDayOfMonth(): Boolean = this != LAST_DAY
 fun Int.notFirstDayOfMonth(): Boolean = this != FIRST_DAY
 
-private const val FIRST_DAY = 1
-private const val LAST_DAY = 28
-
-fun MistriappDate.toDateString(): String = "${this.first} ${this.second}"
+const val FIRST_DAY = 1
+const val LAST_DAY = 28
 
 fun getMistriappDate(string: String, day: Int): MistriappDate? = when (string) {
     "Spring" -> MistriappDate(Spring, day)
@@ -50,4 +50,3 @@ fun getMistriappDate(string: String, day: Int): MistriappDate? = when (string) {
     "Winter" -> MistriappDate(Winter, day)
     else -> null
 }
-
