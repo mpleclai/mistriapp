@@ -23,6 +23,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -33,6 +35,9 @@ import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.components.ToInfoCard
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
 import com.thedullpencil.common.ui.theme.toDp
+import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.getNextDate
+import com.thedullpencil.core.util.getPreviousDate
 import com.thedullpencil.core.util.toDateString
 import com.thedullpencil.home.HomeUiState.Empty
 import com.thedullpencil.home.HomeUiState.HomeInfo
@@ -74,15 +79,15 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
 @Composable
 fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
-//fun HomeViewModel.DateWidget() = Row(
     Modifier
         .fillMaxWidth()
         .padding(PaddingL.toDp()),
     horizontalArrangement = SpaceEvenly,
     verticalAlignment = CenterVertically
 ) {
+    val date = remember{ mutableStateOf(MistriappDate(homeUiState.selectedProfile.currentDate, homeUiState.selectedProfile.currentYear)) }
     DateWidgetButton(onClick = {
-//        setDate(selectedDate.getPreviousDay())
+        date.value = date.value.first.getPreviousDate(date.value.second)
     }) {
         Icon(
             AutoMirrored.Filled.KeyboardArrowLeft,
@@ -90,12 +95,11 @@ fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
         )
     }
     Text(
-        homeUiState.selectedProfile.currentDate.toDateString(),
+        date.value.first.toDateString(date.value.second),
         Modifier.padding(horizontal = PaddingL.toDp())
     )
-//    Text(selectedDate.toDateString(), Modifier.padding(horizontal = PaddingL.toDp()))
     DateWidgetButton(onClick = {
-//        setDate(selectedDate.getNextDay())
+        date.value = date.value.first.getNextDate(date.value.second)
     }) {
         Icon(
             AutoMirrored.Filled.KeyboardArrowRight,

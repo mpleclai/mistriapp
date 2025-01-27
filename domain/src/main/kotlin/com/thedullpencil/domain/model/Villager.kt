@@ -1,8 +1,8 @@
 package com.thedullpencil.domain.model
 
-import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Day
 
 data class Villager(
     val name: String,
-    val birthday: MistriappDate,
+    val birthday: Day,
 )

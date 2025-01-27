@@ -1,6 +1,6 @@
 package com.thedullpencil.domain
 
-import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.Season.Summer
 import com.thedullpencil.data.model.VillagerData
@@ -25,8 +25,8 @@ class GetVillagerListUseCaseTest {
 
     private val villagerListData = listOf(villager1, villager2)
 
-    private val expectedVillager1 = Villager(NAME, MistriappDate(Summer, BIRTHDAY_1))
-    private val expectedVillager2 = Villager(NAME_2, MistriappDate(Spring, BIRTHDAY_2))
+    private val expectedVillager1 = Villager(NAME, Day(Summer, BIRTHDAY_1))
+    private val expectedVillager2 = Villager(NAME_2, Day(Spring, BIRTHDAY_2))
 
     private val emptyList = emptyList<VillagerData>()
 

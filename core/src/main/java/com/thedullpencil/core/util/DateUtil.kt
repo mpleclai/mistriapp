@@ -5,23 +5,41 @@ import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.Season.Summer
 import com.thedullpencil.core.util.Season.Winter
 
-typealias MistriappDate = Pair<Season, Int>
+typealias Day = Pair<Season, Int>
+typealias MistriappDate = Pair<Day, Int>
 
 enum class Season { Spring, Summer, Fall, Winter }
 
-fun MistriappDate.getPreviousDay(): MistriappDate = if (second.notFirstDayOfMonth()) {
-    MistriappDate(first, second - 1)
+fun Day.getPreviousDay(): Day = if (second.notFirstDayOfMonth()) {
+    Day(first, second - 1)
 } else {
-    MistriappDate(first.getPreviousSeason(), LAST_DAY)
+    Day(first.getPreviousSeason(), LAST_DAY)
 }
 
-fun MistriappDate.getNextDay(): MistriappDate = if (second.notLastDayOfMonth()) {
-    MistriappDate(first, second + 1)
+fun Day.getNextDay(): Day = if (second.notLastDayOfMonth()) {
+    Day(first, second + 1)
 } else {
-    MistriappDate(first.getNextSeason(), FIRST_DAY)
+    Day(first.getNextSeason(), FIRST_DAY)
 }
 
-fun MistriappDate.toDateString(): String = "${this.first} ${this.second}"
+fun Day.getNextDate(year: Int): MistriappDate =
+    if (first == Winter && second == LAST_DAY) {
+        MistriappDate(getNextDay(), year + 1)
+    } else {
+        MistriappDate(getNextDay(), year)
+    }
+
+fun Day.getPreviousDate(year: Int) : MistriappDate=
+    if (first == Spring && second == FIRST_DAY && year == 1) {
+        MistriappDate(this, year)
+    } else if (first == Spring && second == FIRST_DAY){
+        MistriappDate(getPreviousDay(), year - 1)
+    } else {
+        MistriappDate(getPreviousDay(), year)
+    }
+
+fun Day.toDateString(year: Int? = null): String =
+    "${this.first} ${this.second}" + year?.let { ", Year $year" }
 
 fun Season.getNextSeason(): Season = when (this) {
     Spring -> Summer
@@ -43,10 +61,10 @@ fun Int.notFirstDayOfMonth(): Boolean = this != FIRST_DAY
 const val FIRST_DAY = 1
 const val LAST_DAY = 28
 
-fun getMistriappDate(string: String, day: Int): MistriappDate? = when (string) {
-    "Spring" -> MistriappDate(Spring, day)
-    "Summer" -> MistriappDate(Summer, day)
-    "Fall" -> MistriappDate(Fall, day)
-    "Winter" -> MistriappDate(Winter, day)
+fun getMistriappDate(string: String, day: Int): Day? = when (string) {
+    "Spring" -> Day(Spring, day)
+    "Summer" -> Day(Summer, day)
+    "Fall" -> Day(Fall, day)
+    "Winter" -> Day(Winter, day)
     else -> null
 }
