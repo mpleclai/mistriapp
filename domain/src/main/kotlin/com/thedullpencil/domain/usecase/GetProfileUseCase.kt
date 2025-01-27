@@ -1,6 +1,6 @@
 package com.thedullpencil.domain.usecase
 
-import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.getMistriappDate
 import com.thedullpencil.data.repository.ProfileRepository
@@ -25,7 +25,7 @@ class GetProfileUseCase @Inject constructor(
                         userId = userId,
                         name = name,
                         currentYear = year,
-                        currentDate = getMistriappDate(season, day) ?: MistriappDate(Spring, 1)
+                        currentDate = getMistriappDate(season, day) ?: Day(Spring, 1)
                     )
                 }
             )

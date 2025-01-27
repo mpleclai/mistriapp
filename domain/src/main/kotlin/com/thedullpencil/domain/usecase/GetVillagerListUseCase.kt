@@ -1,6 +1,6 @@
 package com.thedullpencil.domain.usecase
 
-import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.getMistriappDate
 import com.thedullpencil.data.model.VillagerData
@@ -25,7 +25,7 @@ class GetVillagerListUseCase @Inject constructor(
                 with(villagerData) {
                     Villager(
                         name,
-                        getMistriappDate(birthdaySeason, birthdayDay) ?: MistriappDate(Spring, 1)
+                        getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1)
                     )
                 }
             }.sortedBy {

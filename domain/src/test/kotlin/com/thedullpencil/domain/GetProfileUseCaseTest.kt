@@ -1,6 +1,6 @@
 package com.thedullpencil.domain
 
-import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.data.model.ProfileData
 import com.thedullpencil.data.repository.ProfileRepository
@@ -29,9 +29,9 @@ class GetProfileUseCaseTest {
     private val testProfileDataEdgeCase =
         ProfileData(ID_STRING, NAME, BAD_SEASON, BAD_DAY, BAD_YEAR)
 
-    private val expectedProfile = Profile(ID_1, NAME, MistriappDate(Spring, DAY), YEAR)
+    private val expectedProfile = Profile(ID_1, NAME, Day(Spring, DAY), YEAR)
     private val expectedProfileEdgeCase =
-        Profile(ID_STRING, NAME, MistriappDate(Spring, YEAR), BAD_YEAR)
+        Profile(ID_STRING, NAME, Day(Spring, YEAR), BAD_YEAR)
 
     private val profileRepository = mockk<ProfileRepository> {
         coEvery { this@mockk.getProfileData(any()) } returns testProfileData
