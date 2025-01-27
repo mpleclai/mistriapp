@@ -34,6 +34,7 @@ import com.thedullpencil.common.components.InfoBlock
 import com.thedullpencil.common.components.InfoItem
 import com.thedullpencil.common.components.ToInfoCard
 import com.thedullpencil.common.ui.theme.Dimens.PaddingL
+import com.thedullpencil.common.ui.theme.Dimens.PaddingS
 import com.thedullpencil.common.ui.theme.toDp
 import com.thedullpencil.core.util.MistriappDate
 import com.thedullpencil.core.util.getNextDate
@@ -56,7 +57,6 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     Column(Modifier.padding(PaddingL.toDp())) {
         when (homeUiState) {
             is Empty -> {
-                //        if(viewModel.selectedProfile == null){
                 val selectProfile = stringResource(feature_home_select_profile)
                 Card(Modifier.fillMaxWidth()) {
                     InfoItem(name = selectProfile, icon = Filled.Add).ToInfoCard(false)
@@ -66,6 +66,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             is HomeInfo -> {
                 with(viewModel) {
                     DateWidget(homeUiState as HomeInfo)
+                    Spacer(Modifier.padding(PaddingS.toDp()))
                     ProfileCard(homeUiState as HomeInfo)
                     Spacer(Modifier.padding(PaddingL.toDp()))
                     RemindersSection()
@@ -85,26 +86,26 @@ fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
     horizontalArrangement = SpaceEvenly,
     verticalAlignment = CenterVertically
 ) {
-    val date = remember{ mutableStateOf(MistriappDate(homeUiState.selectedProfile.currentDate, homeUiState.selectedProfile.currentYear)) }
-    DateWidgetButton(onClick = {
-        date.value = date.value.first.getPreviousDate(date.value.second)
-    }) {
-        Icon(
-            AutoMirrored.Filled.KeyboardArrowLeft,
-            stringResource(feature_home_decrement_date)
+    val date = remember{ mutableStateOf(
+        MistriappDate(homeUiState.selectedProfile.currentDate, homeUiState.selectedProfile.currentYear)
+    ) }
+    with(date.value) {
+        DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getPreviousDate() }) {
+            Icon(
+                AutoMirrored.Filled.KeyboardArrowLeft,
+                stringResource(feature_home_decrement_date)
+            )
+        }
+        Text(
+            date.value.toDateString(),
+            Modifier.padding(horizontal = PaddingL.toDp())
         )
-    }
-    Text(
-        date.value.first.toDateString(date.value.second),
-        Modifier.padding(horizontal = PaddingL.toDp())
-    )
-    DateWidgetButton(onClick = {
-        date.value = date.value.first.getNextDate(date.value.second)
-    }) {
-        Icon(
-            AutoMirrored.Filled.KeyboardArrowRight,
-            stringResource(feature_home_increment_date)
-        )
+        DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getNextDate()}) {
+            Icon(
+                AutoMirrored.Filled.KeyboardArrowRight,
+                stringResource(feature_home_increment_date)
+            )
+        }
     }
 }
 
@@ -124,7 +125,6 @@ fun DateWidgetButton(onClick: () -> Unit, content: @Composable () -> Unit) =
 @Composable
 fun HomeViewModel.ProfileCard(homeUiState: HomeInfo) = Card(Modifier.fillMaxWidth()) {
     val name = homeUiState.selectedProfile.name
-//    val name = this@ProfileCard.selectedProfile?.name
     InfoItem(name = name, icon = Filled.AccountCircle).ToInfoCard(false)
 
 }

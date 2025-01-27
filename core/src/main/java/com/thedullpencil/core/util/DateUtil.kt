@@ -6,7 +6,7 @@ import com.thedullpencil.core.util.Season.Summer
 import com.thedullpencil.core.util.Season.Winter
 
 typealias Day = Pair<Season, Int>
-typealias MistriappDate = Pair<Day, Int>
+data class MistriappDate(val day: Day, val year: Int)
 
 enum class Season { Spring, Summer, Fall, Winter }
 
@@ -22,24 +22,27 @@ fun Day.getNextDay(): Day = if (second.notLastDayOfMonth()) {
     Day(first.getNextSeason(), FIRST_DAY)
 }
 
-fun Day.getNextDate(year: Int): MistriappDate =
+fun MistriappDate.getPreviousDate() : MistriappDate = with(day) {
+    if (first == Spring && second == FIRST_DAY && year == 1) {
+        MistriappDate(this, year)
+    } else if (first == Spring && second == FIRST_DAY) {
+        MistriappDate(getPreviousDay(), year - 1)
+    } else {
+        MistriappDate(getPreviousDay(), year)
+    }
+}
+
+fun MistriappDate.getNextDate(): MistriappDate = with(day) {
     if (first == Winter && second == LAST_DAY) {
         MistriappDate(getNextDay(), year + 1)
     } else {
         MistriappDate(getNextDay(), year)
     }
+}
 
-fun Day.getPreviousDate(year: Int) : MistriappDate=
-    if (first == Spring && second == FIRST_DAY && year == 1) {
-        MistriappDate(this, year)
-    } else if (first == Spring && second == FIRST_DAY){
-        MistriappDate(getPreviousDay(), year - 1)
-    } else {
-        MistriappDate(getPreviousDay(), year)
-    }
+fun Day.toDateString(): String = "${this.first} ${this.second}"
 
-fun Day.toDateString(year: Int? = null): String =
-    "${this.first} ${this.second}" + year?.let { ", Year $year" }
+fun MistriappDate.toDateString(): String = "${this.day.first} ${this.day.second}" + ", Year $year"
 
 fun Season.getNextSeason(): Season = when (this) {
     Spring -> Summer
