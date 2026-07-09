@@ -1,42 +1,74 @@
-import com.android.build.api.dsl.CommonExtension
-import com.thedullpencil.mistriapp.libs
+package com.thedullpencil.mistriapp
+
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.provideDelegate
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
-import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 
+private const val ANDROID_COMPILE_SDK = 34
+private const val ANDROID_MIN_SDK = 21
+private val JvmCompatibility = JavaVersion.VERSION_11
+private val KotlinJvmCompatibility = JvmTarget.JVM_11
 
-internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+internal fun Project.configureKotlinAndroid(commonExtension: ApplicationExtension) {
+    configureAndroidDefaults(
+        setCompileSdk = { commonExtension.compileSdk = it },
+        setMinSdk = { commonExtension.defaultConfig { minSdk = it } },
+        configureCompileOptions = {
+            commonExtension.compileOptions {
+                sourceCompatibility = JvmCompatibility
+                targetCompatibility = JvmCompatibility
+                isCoreLibraryDesugaringEnabled = true
+            }
+        },
+    )
+
+    configureKotlinAndroidProject()
+}
+
+internal fun Project.configureKotlinAndroid(commonExtension: LibraryExtension) {
+    configureAndroidDefaults(
+        setCompileSdk = { commonExtension.compileSdk = it },
+        setMinSdk = { commonExtension.defaultConfig { minSdk = it } },
+        configureCompileOptions = {
+            commonExtension.compileOptions {
+                sourceCompatibility = JvmCompatibility
+                targetCompatibility = JvmCompatibility
+                isCoreLibraryDesugaringEnabled = true
+            }
+        },
+    )
+
+    configureKotlinAndroidProject()
+}
+
+private fun Project.configureAndroidDefaults(
+    setCompileSdk: (Int) -> Unit,
+    setMinSdk: (Int) -> Unit,
+    configureCompileOptions: () -> Unit,
 ) {
-    commonExtension.apply {
-        compileSdk = 34
+    setCompileSdk(ANDROID_COMPILE_SDK)
+    setMinSdk(ANDROID_MIN_SDK)
+    configureCompileOptions()
+}
 
-        defaultConfig {
-            minSdk = 21
-        }
-
-        compileOptions {
-            // Up to Java 11 APIs are available through desugaring
-            // https://developer.android.com/studio/write/java11-minimal-support-table
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
-            isCoreLibraryDesugaringEnabled = true
+private fun Project.configureKotlinAndroidProject() {
+    configure<KotlinAndroidProjectExtension> {
+        compilerOptions.apply {
+            jvmTarget = KotlinJvmCompatibility
+            freeCompilerArgs.add(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            )
         }
     }
-
-    configureKotlin<KotlinAndroidProjectExtension>()
-
-    dependencies {
-        add("coreLibraryDesugaring", libs.findLibrary("android.desugarJdkLibs").get())
-    }
+    dependencies { add("coreLibraryDesugaring", libs.findLibrary("android.desugarJdkLibs").get()) }
 }
 
 /**
@@ -44,32 +76,18 @@ internal fun Project.configureKotlinAndroid(
  */
 internal fun Project.configureKotlinJvm() {
     extensions.configure<JavaPluginExtension> {
-        // Up to Java 11 APIs are available through desugaring
-        // https://developer.android.com/studio/write/java11-minimal-support-table
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JvmCompatibility
+        targetCompatibility = JvmCompatibility
     }
 
-    configureKotlin<KotlinJvmProjectExtension>()
-}
-
-/**
- * Configure base Kotlin options
- */
-private inline fun <reified T : KotlinTopLevelExtension> Project.configureKotlin() = configure<T> {
-    // Treat all Kotlin warnings as errors (disabled by default)
-    // Override by setting warningsAsErrors=true in your ~/.gradle/gradle.properties
-    val warningsAsErrors: String? by project
-    when (this) {
-        is KotlinAndroidProjectExtension -> compilerOptions
-        is KotlinJvmProjectExtension -> compilerOptions
-        else -> TODO("Unsupported project extension $this ${T::class}")
-    }.apply {
-        jvmTarget = JvmTarget.JVM_11
-        allWarningsAsErrors = warningsAsErrors.toBoolean()
-        freeCompilerArgs.add(
-            // Enable experimental coroutines APIs, including Flow
-            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-        )
+    configure<KotlinJvmProjectExtension> {
+        compilerOptions.apply {
+            jvmTarget = KotlinJvmCompatibility
+            freeCompilerArgs.add(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            )
+        }
     }
 }
+
+

@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.mistriapp.android.feature)
     alias(libs.plugins.mistriapp.android.library.compose)
+    alias(libs.plugins.mistriapp.hilt)
+    alias(libs.plugins.mistriapp.compose.testing)
 }
 
-android {
-    namespace = "com.thedullpencil.villagers"
-}
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
@@ -17,12 +16,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.hilt.ext.compiler)
     implementation(libs.javax.inject)
 
-
-    testImplementation(libs.androidx.compose.ui.test)
-    testImplementation(libs.robolectric)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.compose.ui.test)
     androidTestImplementation(libs.hilt.android.testing)

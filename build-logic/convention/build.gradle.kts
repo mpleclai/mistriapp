@@ -22,7 +22,6 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.ksp.gradlePlugin)
 }
 
 tasks {
@@ -62,6 +61,10 @@ gradlePlugin {
         register("hilt") {
             id = "mistriapp.hilt"
             implementationClass = "HiltConventionPlugin"
+        }
+        register("composeTest") {
+            id = "mistriapp.compose.testing"
+            implementationClass = "ComposeTestConventionPlugin"
         }
     }
 }

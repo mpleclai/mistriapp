@@ -1,11 +1,8 @@
 plugins {
-    alias(libs.plugins.android.library)
     alias(libs.plugins.mistriapp.android.library)
+    alias(libs.plugins.mistriapp.android.test)
 }
 
-android {
-    namespace = "com.thedullpencil.domain"
-}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
@@ -13,9 +10,4 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(project(":data"))
     implementation(project(":core"))
-
-    testImplementation(libs.mockk)
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.kotlinTest)
 }

@@ -1,7 +1,7 @@
 [versions]
 androidDesugarJdkLibs = "2.0.4"
 # AGP and tools should be updated together
-androidGradlePlugin = "8.4.2"
+androidGradlePlugin = "9.2.1"
 androidTools = "31.4.1"
 androidxActivity = "1.8.2"
 androidxAppCompat = "1.7.0"
@@ -30,15 +30,15 @@ androidxUiAutomator = "2.3.0"
 androidxWindowManager = "1.3.0-alpha03"
 androidxWork = "2.9.0"
 coil = "2.6.0"
-hilt = "2.51.1"
+hilt = "2.57.1"
 hiltExt = "1.1.0"
 jacoco = "0.8.7"
+kotlin = "2.2.10"
 junit4 = "4.13.2"
-kotlin = "2.0.0"
 kotlinxCoroutines = "1.8.0"
 kotlinxDatetime = "0.5.0"
 kotlinxSerializationJson = "1.6.3"
-ksp = "2.0.0-1.0.21"
+ksp = "2.2.10-2.0.2"
 okhttp = "4.12.0"
 protobuf = "4.26.1"
 retrofit = "2.9.0"
@@ -155,6 +155,7 @@ baselineprofile = { id = "androidx.baselineprofile", version.ref = "androidxMacr
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -165,4 +166,6 @@ mistriapp-android-application-compose = { id = "mistriapp.android.application.co
 mistriapp-android-feature = { id = "mistriapp.android.feature", version = "unspecified" }
 mistriapp-android-library = { id = "mistriapp.android.library", version = "unspecified" }
 mistriapp-android-library-compose = { id = "mistriapp.android.library.compose", version = "unspecified" }
+mistriapp-android-test = { id = "mistriapp.android.test", version = "unspecified" }
+mistriapp-compose-testing = { id = "mistriapp.compose.testing", version = "unspecified" }
 mistriapp-hilt = { id = "mistriapp.hilt", version = "unspecified" }
