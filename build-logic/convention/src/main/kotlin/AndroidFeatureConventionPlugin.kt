@@ -22,13 +22,14 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 testOptions.animationsDisabled = true
+                testOptions.unitTests.isIncludeAndroidResources = true
                 resourcePrefix = calculateResourcePrefix(path)
             }
 
             dependencies {
-                add("implementation", project(":common"))
-                add("implementation", project(":core"))
-                add("implementation", project(":domain"))
+                add("implementation", project(":core:ui"))
+                add("implementation", project(":core:common"))
+                add("implementation", project(":core:domain"))
 
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())

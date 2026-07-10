@@ -5,19 +5,18 @@
     <application
         android:name = ".MistriappApplication"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/common_app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:dataExtractionRules="@xml/core_ui_data_extraction_rules"
+        android:fullBackupContent="@xml/core_ui_backup_rules"
+        android:icon="@mipmap/core_ui_ic_launcher"
+        android:label="@string/core_ui_app_name"
+        android:roundIcon="@mipmap/core_ui_ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mistriapp"
+        android:theme="@style/core_ui_theme_mistriapp"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/common_app_name"
-            android:theme="@style/Theme.Mistriapp">
+            android:theme="@style/core_ui_theme_mistriapp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

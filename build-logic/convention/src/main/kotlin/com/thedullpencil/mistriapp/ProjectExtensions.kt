@@ -12,10 +12,11 @@ internal fun Project.androidNamespace(): String =
     if (name == "app") {
         "com.thedullpencil.mistriapp"
     } else {
-        "com.thedullpencil.$name"
+        "com.thedullpencil" + path.replace(":", ".").lowercase()
     }
 
 internal fun calculateResourcePrefix(path: String): String {
+
     return path.split("""\W""".toRegex()).drop(1).distinct()
         .joinToString(separator = "_").lowercase() + "_"
 }

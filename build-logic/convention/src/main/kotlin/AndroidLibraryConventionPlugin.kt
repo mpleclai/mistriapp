@@ -22,6 +22,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 testOptions.animationsDisabled = true
+                testOptions.unitTests.isIncludeAndroidResources = true
                 resourcePrefix = calculateResourcePrefix(path)
             }
             dependencies {

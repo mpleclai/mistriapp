@@ -8,10 +8,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.thedullpencil.common.components.InfoBlock
-import com.thedullpencil.common.components.InfoItem
-import com.thedullpencil.common.ui.theme.Dimens.PaddingL
-import com.thedullpencil.common.ui.theme.toDp
+import com.thedullpencil.core.ui.components.InfoBlock
+import com.thedullpencil.core.ui.components.InfoItem
+import com.thedullpencil.core.ui.theme.Dimens.PaddingL
+import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.domain.model.Villager
 import com.thedullpencil.villagers.VillagerViewState.Empty
 import com.thedullpencil.villagers.VillagerViewState.Loading
