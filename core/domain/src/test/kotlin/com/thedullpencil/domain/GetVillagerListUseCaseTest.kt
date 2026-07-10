@@ -7,6 +7,7 @@ import com.thedullpencil.data.model.VillagerData
 import com.thedullpencil.data.repository.VillagerRepository
 import com.thedullpencil.domain.model.Villager
 import com.thedullpencil.domain.usecase.GetVillagerListUseCase
+import com.thedullpencil.domain.usecase.SortField
 import io.mockk.coEvery
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
@@ -14,8 +15,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
-private const val NAME = "Name"
-private const val NAME_2 = "Name2"
+private const val NAME = "Zoe"
+private const val NAME_2 = "Alex"
 private const val BIRTHDAY_1 = 11
 private const val BIRTHDAY_2 = 14
 
@@ -44,7 +45,7 @@ class GetVillagerListUseCaseTest {
     private val getVillagerListUseCaseEmpty by lazy { GetVillagerListUseCase(emptyVillagerRepository) }
 
     @Test
-    fun `data maps correctly for list`() = runTest {
+    fun `data maps correctly for list and keeps unsorted default order`() = runTest {
         val villagers = getVillagerListUseCase.invoke()
         with(villagers.first().first()) {
             assertEquals(expectedVillager1.name, name)
@@ -54,6 +55,14 @@ class GetVillagerListUseCaseTest {
             assertEquals(expectedVillager2.name, name)
             assertEquals(expectedVillager2.birthday, birthday)
         }
+        assertEquals(listOf(NAME, NAME_2), villagers.first().map { it.name })
+    }
+
+    @Test
+    fun `villagers can be sorted by name`() = runTest {
+        val villagers = getVillagerListUseCase(SortField.NAME).first()
+
+        assertEquals(listOf(NAME_2, NAME), villagers.map { it.name })
     }
 
     @Test

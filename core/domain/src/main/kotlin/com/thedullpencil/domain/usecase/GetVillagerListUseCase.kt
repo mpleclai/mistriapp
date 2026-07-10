@@ -6,8 +6,8 @@ import com.thedullpencil.core.util.getMistriappDate
 import com.thedullpencil.data.model.VillagerData
 import com.thedullpencil.data.repository.VillagerRepository
 import com.thedullpencil.domain.model.Villager
-import com.thedullpencil.domain.usecase.SortField.NAME
 import com.thedullpencil.domain.usecase.SortField.NONE
+import com.thedullpencil.domain.usecase.SortField.NAME
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -19,20 +19,20 @@ class GetVillagerListUseCase @Inject constructor(
      * Returns a list of villagers
      * @param sortBy - the field used to sort the list items. Default NONE = no sorting.
      */
-    operator fun invoke(sortBy: SortField = NAME): Flow<List<Villager>> = flow {
+    operator fun invoke(sortBy: SortField = NONE): Flow<List<Villager>> = flow {
+        val villagers = villagersRepository.getVillagers().map { villagerData: VillagerData ->
+            with(villagerData) {
+                Villager(
+                    name,
+                    getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1)
+                )
+            }
+        }
+
         emit(
-            villagersRepository.getVillagers().map { villagerData: VillagerData ->
-                with(villagerData) {
-                    Villager(
-                        name,
-                        getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1)
-                    )
-                }
-            }.sortedBy {
-                when (sortBy) {
-                    NAME -> it.name
-                    NONE -> null
-                }
+            when (sortBy) {
+                NAME -> villagers.sortedBy { it.name }
+                NONE -> villagers
             }
         )
     }

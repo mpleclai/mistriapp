@@ -64,35 +64,48 @@ fun Int.notFirstDayOfMonth(): Boolean = this != FIRST_DAY
 const val FIRST_DAY = 1
 const val LAST_DAY = 28
 
+private const val SPRING = "Spring"
+private const val SUMMER = "Summer"
+private const val FALL = "Fall"
+private const val WINTER = "Winter"
+private const val ALL = "All"
+
 fun getMistriappDate(string: String, day: Int): Day? = when (string) {
-    "Spring" -> Day(Spring, day)
-    "Summer" -> Day(Summer, day)
-    "Fall" -> Day(Fall, day)
-    "Winter" -> Day(Winter, day)
+    SPRING -> Day(Spring, day)
+    SUMMER -> Day(Summer, day)
+    FALL -> Day(Fall, day)
+    WINTER -> Day(Winter, day)
     else -> null
 }
 
 fun String.toSeason(): List<Season> {
-    val normalized = replace("\\u00a0", " ").replace('\u00A0', ' ').trim()
-    if (normalized == "All") {
+    // Note some of this regex logic can probably be dropped if data source changes
+    val normalizedString = getNormalizedString()
+    if (normalizedString == ALL) {
         return Season.entries
     }
 
-    val seasons = normalized
+    val seasons = normalizedString
         .split(Regex("\\s+"))
         .mapNotNull { value ->
             when (value) {
-                "Spring" -> Spring
-                "Summer" -> Summer
-                "Fall" -> Fall
-                "Winter" -> Winter
+                SPRING -> Spring
+                SUMMER -> Summer
+                FALL -> Fall
+                WINTER -> Winter
                 else -> null
             }
         }
         .distinct()
 
     require(seasons.isNotEmpty()) {
-        "Unknown season value: '$this' (normalized: '$normalized')"
+        "Unknown season value: '$this' (normalized: '$normalizedString')"
     }
     return seasons
 }
+
+// Note some of this regex logic can probably be dropped if data source changes
+private fun String.getNormalizedString(): String =
+    replace("\\u00a0", " ")
+        .replace('\u00A0', ' ')
+        .trim()

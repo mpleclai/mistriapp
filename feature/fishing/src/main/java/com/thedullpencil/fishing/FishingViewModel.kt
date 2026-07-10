@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.thedullpencil.domain.model.Fish
 import com.thedullpencil.domain.usecase.GetFishListUseCase
 import com.thedullpencil.domain.usecase.SortField.NAME
+import com.thedullpencil.fishing.FishingViewState.Empty
+import com.thedullpencil.fishing.FishingViewState.FishingInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -20,11 +22,7 @@ class FishingViewModel @Inject constructor(
 ) : ViewModel() {
     val uiState: StateFlow<FishingViewState> = getFishListUseCase(sortBy = NAME)
         .map { fish ->
-            if (fish.isEmpty()) {
-                FishingViewState.Empty
-            } else {
-                FishingViewState.FishingInfo(fish)
-            }
+            if (fish.isEmpty()) Empty else FishingInfo(fish)
         }
         .stateIn(
             scope = viewModelScope,
