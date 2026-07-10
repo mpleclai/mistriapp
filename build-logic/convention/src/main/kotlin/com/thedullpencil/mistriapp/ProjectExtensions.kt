@@ -7,3 +7,15 @@ import org.gradle.kotlin.dsl.getByType
 
 val Project.libs
     get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+internal fun Project.androidNamespace(): String =
+    if (name == "app") {
+        "com.thedullpencil.mistriapp"
+    } else {
+        "com.thedullpencil.$name"
+    }
+
+internal fun calculateResourcePrefix(path: String): String {
+    return path.split("""\W""".toRegex()).drop(1).distinct()
+        .joinToString(separator = "_").lowercase() + "_"
+}

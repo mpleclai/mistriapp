@@ -1,11 +1,9 @@
 plugins {
     alias(libs.plugins.mistriapp.android.library)
     alias(libs.plugins.mistriapp.android.library.compose)
+    alias(libs.plugins.mistriapp.compose.testing)
 }
 
-android {
-    namespace = "com.thedullpencil.common"
-}
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
@@ -14,7 +12,4 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.lifecycle.viewModelCompose)
-
-    testImplementation(libs.androidx.compose.ui.test)
-    testImplementation(libs.robolectric)
 }

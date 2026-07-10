@@ -1,12 +1,8 @@
 plugins {
-    alias(libs.plugins.android.library)
     alias(libs.plugins.mistriapp.android.library)
     alias(libs.plugins.mistriapp.hilt)
 }
 
-android {
-    namespace = "com.thedullpencil.data"
-}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
