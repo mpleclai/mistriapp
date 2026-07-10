@@ -12,8 +12,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
-private const val ANDROID_COMPILE_SDK = 34
-private const val ANDROID_MIN_SDK = 21
+private const val ANDROID_COMPILE_SDK = 36
+private const val ANDROID_MIN_SDK = 23
 private val JvmCompatibility = JavaVersion.VERSION_11
 private val KotlinJvmCompatibility = JvmTarget.JVM_11
 

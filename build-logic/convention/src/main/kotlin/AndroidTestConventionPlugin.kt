@@ -9,7 +9,7 @@ import org.gradle.kotlin.dsl.dependencies
  * Usage in build.gradle.kts:
  * ```kotlin
  * plugins {
- *     alias(libs.plugins.mistriapp.android.test.dependencies)
+ *     alias(libs.plugins.mistriapp.android.test)
  * }
  * ```
  *
@@ -27,15 +27,21 @@ class AndroidTestConventionPlugin : Plugin<Project> {
 
                 // Coroutines testing
                 add("testImplementation", libs.findLibrary("kotlinx.coroutines.test").get())
+            }
 
-                // Optional: Android-specific test utilities (only if this is an Android module)
-                if (project.plugins.hasPlugin("com.android.library") ||
-                    project.plugins.hasPlugin("com.android.application")) {
-                    add("testImplementation", libs.findLibrary("androidx.test.core").get())
-                    add("testImplementation", libs.findLibrary("androidx.test.ext").get())
-                    add("testImplementation", libs.findLibrary("robolectric").get())
+            listOf("com.android.library", "com.android.application").forEach { pluginId ->
+                pluginManager.withPlugin(pluginId) {
+                    addAndroidTestDependencies()
                 }
             }
+        }
+    }
+
+    private fun Project.addAndroidTestDependencies() {
+        dependencies {
+            add("testImplementation", libs.findLibrary("androidx.test.core").get())
+            add("testImplementation", libs.findLibrary("androidx.test.ext").get())
+            add("testImplementation", libs.findLibrary("robolectric").get())
         }
     }
 }

@@ -6,8 +6,8 @@ import org.gradle.kotlin.dsl.dependencies
 /**
  * Convention plugin that centralizes common Compose UI test dependencies.
  *
- * Automatically adds androidx.compose.ui.test and manifest testing utilities
- * that are repeated across all Compose modules.
+ * Automatically adds Compose UI unit-test dependencies (ui-test-junit4) and Robolectric
+ * that are repeated across Compose modules.
  *
  * Usage in build.gradle.kts:
  * ```kotlin
