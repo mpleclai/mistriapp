@@ -14,7 +14,7 @@ class GetFishListUseCase @Inject constructor(
     private val fishRepository: FishRepository
 ) {
     /**
-     * Returns a list of villagers
+     * Returns a list of fish
      * @param sortBy - the field used to sort the list items. Default NONE = no sorting.
      */
     operator fun invoke(sortBy: SortField = SortField.NAME): Flow<List<Fish>> = flow {
