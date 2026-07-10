@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.core.ui.components.InfoBlock
 import com.thedullpencil.core.ui.components.InfoItem
@@ -21,13 +20,10 @@ fun FishingScreen(
 ) {
     val fishUiState by viewModel.uiState.collectAsState()
 
-
-    when (fishUiState) {
-        is FishingViewState.FishingInfo ->
-            FishList((fishUiState as FishingViewState.FishingInfo).fish, modifier)
-
+    when (val state = fishUiState) {
+        is FishingViewState.FishingInfo -> FishList(state.fish, modifier)
         is FishingViewState.Loading -> CircularProgressIndicator()
-        is FishingViewState.Empty -> FishList(emptyList())
+        is FishingViewState.Empty -> FishList(emptyList(), modifier)
     }
 }
 

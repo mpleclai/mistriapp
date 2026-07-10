@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class FishData (
+data class FishData(
     @SerialName("Name") val name: String,
     @SerialName("Description") val description: String,
     @SerialName("Price") val price: String,

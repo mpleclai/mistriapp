@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
-
 private const val TIMEOUT = 5_000L
 
 @HiltViewModel
@@ -20,7 +19,13 @@ class FishingViewModel @Inject constructor(
     getFishListUseCase: GetFishListUseCase,
 ) : ViewModel() {
     val uiState: StateFlow<FishingViewState> = getFishListUseCase(sortBy = NAME)
-        .map(FishingViewState::FishingInfo)
+        .map { fish ->
+            if (fish.isEmpty()) {
+                FishingViewState.Empty
+            } else {
+                FishingViewState.FishingInfo(fish)
+            }
+        }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(TIMEOUT),

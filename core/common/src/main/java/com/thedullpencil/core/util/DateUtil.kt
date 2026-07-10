@@ -72,12 +72,27 @@ fun getMistriappDate(string: String, day: Int): Day? = when (string) {
     else -> null
 }
 
-fun String.toSeason(): Season {
-    return when (this) {
-        "Spring" -> Spring
-        "Summer" -> Summer
-        "Fall" -> Fall
-        "Winter" -> Winter
-        else -> Spring
+fun String.toSeason(): List<Season> {
+    val normalized = replace("\\u00a0", " ").replace('\u00A0', ' ').trim()
+    if (normalized == "All") {
+        return Season.entries
     }
+
+    val seasons = normalized
+        .split(Regex("\\s+"))
+        .mapNotNull { value ->
+            when (value) {
+                "Spring" -> Spring
+                "Summer" -> Summer
+                "Fall" -> Fall
+                "Winter" -> Winter
+                else -> null
+            }
+        }
+        .distinct()
+
+    require(seasons.isNotEmpty()) {
+        "Unknown season value: '$this' (normalized: '$normalized')"
+    }
+    return seasons
 }
