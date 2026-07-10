@@ -24,7 +24,8 @@ data class InfoItem(
     val modifier: Modifier = Modifier,
     val name: String? = null,
     val value: String? = null,
-    val icon: ImageVector? = null
+    val icon: ImageVector? = null,
+    val id: String? = null
 )
 
 @Composable

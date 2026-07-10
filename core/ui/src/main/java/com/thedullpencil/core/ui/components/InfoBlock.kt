@@ -2,6 +2,8 @@ package com.thedullpencil.core.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
@@ -17,8 +19,18 @@ fun InfoBlock(
     items: List<InfoItem> = emptyList()
 ) = Card(modifier.fillMaxWidth()) {
     header?.let { Header(header) }
-    for (item in items) item.ToInfoCard()
+    LazyColumn {
+        itemsIndexed(
+            items = items,
+            key = { index, item -> item.id ?: "${item.derivedKey()}#$index" }
+        ) { _, item ->
+            item.ToInfoCard()
+        }
+    }
 }
+
+private fun InfoItem.derivedKey(): String =
+    listOfNotNull(name, value).joinToString(separator = "|").ifEmpty { "info_item" }
 
 @Composable
 private fun Header(header: String) =

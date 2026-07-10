@@ -71,3 +71,13 @@ fun getMistriappDate(string: String, day: Int): Day? = when (string) {
     "Winter" -> Day(Winter, day)
     else -> null
 }
+
+fun String.toSeason(): Season {
+    return when (this) {
+        "Spring" -> Spring
+        "Summer" -> Summer
+        "Fall" -> Fall
+        "Winter" -> Winter
+        else -> Spring
+    }
+}

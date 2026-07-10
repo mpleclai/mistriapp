@@ -1,5 +1,7 @@
 package com.thedullpencil.data.di
 
+import com.thedullpencil.data.repository.FishRepository
+import com.thedullpencil.data.repository.FishRepositoryImpl
 import com.thedullpencil.data.repository.ProfileRepository
 import com.thedullpencil.data.repository.ProfileRepositoryImpl
 import com.thedullpencil.data.repository.VillagerRepositoryImpl
@@ -21,4 +23,9 @@ abstract class DataModule {
     internal abstract fun bindsProfileRepository(
         profileRepository: ProfileRepositoryImpl,
     ): ProfileRepository
+
+    @Binds
+    internal abstract fun bindsFishRepository(
+        fishRepository: FishRepositoryImpl,
+    ): FishRepository
 }

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.mistriapp.android.library)
     alias(libs.plugins.mistriapp.hilt)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 
