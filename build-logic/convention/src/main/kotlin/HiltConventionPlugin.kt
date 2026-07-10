@@ -7,8 +7,17 @@ import org.gradle.kotlin.dsl.dependencies
 class HiltConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "com.google.dagger.hilt.android")
             apply(plugin = "org.jetbrains.kotlin.kapt")
+
+            listOf("com.android.application", "com.android.library").forEach { pluginId ->
+                pluginManager.withPlugin(pluginId) {
+                    apply(plugin = "com.google.dagger.hilt.android")
+
+                    dependencies {
+                        add("implementation", libs.findLibrary("hilt.android").get())
+                    }
+                }
+            }
 
             pluginManager.withPlugin("com.google.devtools.ksp") {
                 dependencies {
@@ -19,12 +28,6 @@ class HiltConventionPlugin : Plugin<Project> {
             dependencies {
                 add("kapt", libs.findLibrary("hilt.compiler").get())
                 add("implementation", libs.findLibrary("hilt.core").get())
-            }
-
-            pluginManager.withPlugin("com.android.base") {
-                dependencies {
-                    add("implementation", libs.findLibrary("hilt.android").get())
-                }
             }
         }
     }
