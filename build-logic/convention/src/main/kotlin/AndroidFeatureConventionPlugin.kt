@@ -5,11 +5,9 @@ import com.thedullpencil.mistriapp.configureKotlinAndroid
 import com.thedullpencil.mistriapp.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.withType
 
 class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -40,10 +38,6 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
                 add("testImplementation", libs.findLibrary("androidx.navigation.testing").get())
                 add("androidTestImplementation", libs.findLibrary("androidx.lifecycle.runtimeTesting").get())
-            }
-
-            tasks.withType<Test>().configureEach {
-                failOnNoDiscoveredTests.set(false)
             }
         }
     }
