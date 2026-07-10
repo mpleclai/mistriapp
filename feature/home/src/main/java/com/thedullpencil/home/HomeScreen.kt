@@ -30,24 +30,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.thedullpencil.common.components.InfoBlock
-import com.thedullpencil.common.components.InfoItem
-import com.thedullpencil.common.components.ToInfoCard
-import com.thedullpencil.common.ui.theme.Dimens.PaddingL
-import com.thedullpencil.common.ui.theme.Dimens.PaddingS
-import com.thedullpencil.common.ui.theme.toDp
+import com.thedullpencil.core.ui.components.InfoBlock
+import com.thedullpencil.core.ui.components.InfoItem
+import com.thedullpencil.core.ui.components.ToInfoCard
+import com.thedullpencil.core.ui.theme.Dimens.PaddingL
+import com.thedullpencil.core.ui.theme.Dimens.PaddingS
+import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.core.util.MistriappDate
 import com.thedullpencil.core.util.getNextDate
 import com.thedullpencil.core.util.getPreviousDate
 import com.thedullpencil.core.util.toDateString
 import com.thedullpencil.home.HomeUiState.Empty
 import com.thedullpencil.home.HomeUiState.HomeInfo
-import com.thedullpencil.home.R.string.feature_home_decrement_date
-import com.thedullpencil.home.R.string.feature_home_empty
-import com.thedullpencil.home.R.string.feature_home_increment_date
-import com.thedullpencil.home.R.string.feature_home_reminders
-import com.thedullpencil.home.R.string.feature_home_select_profile
-import com.thedullpencil.home.R.string.feature_home_selected_date
+import com.thedullpencil.feature.home.R.string.feature_home_decrement_date
+import com.thedullpencil.feature.home.R.string.feature_home_empty
+import com.thedullpencil.feature.home.R.string.feature_home_increment_date
+import com.thedullpencil.feature.home.R.string.feature_home_reminders
+import com.thedullpencil.feature.home.R.string.feature_home_select_profile
+import com.thedullpencil.feature.home.R.string.feature_home_selected_date
 
 @Preview
 @Composable

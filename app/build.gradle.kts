@@ -33,7 +33,7 @@ extensions.configure<ApplicationExtension> {
 }
 
 dependencies {
-    implementation(project(":common"))
+    implementation(project(":core:ui"))
     implementation(project(":feature:villagers"))
     implementation(project(":feature:home"))
     implementation(project(":feature:museum"))

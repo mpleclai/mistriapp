@@ -1,0 +1,15 @@
+<resources>
+    <string name="core_ui_app_name">mistriapp</string>
+
+    <!--    Navigation Items-->
+    <string name="core_ui_nav_home">Daily Reminders</string>
+    <string name="core_ui_nav_villagers">Villagers</string>
+    <string name="core_ui_nav_museum">Museum</string>
+    <string name="core_ui_nav_fishing">Fishing</string>
+
+    <!--    testing strings-->
+    <string name="core_ui_divider_tag">divider</string>
+    <string name="core_ui_name_tag">name</string>
+    <string name="core_ui_icon_tag">icon</string>
+    <string name="core_ui_value_tag">value</string>
+</resources>

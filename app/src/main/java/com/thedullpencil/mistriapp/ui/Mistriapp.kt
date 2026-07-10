@@ -40,8 +40,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow.Companion.Ellipsis
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
-import com.thedullpencil.common.ui.theme.Dimens.PaddingL
-import com.thedullpencil.common.ui.theme.toDp
+import com.thedullpencil.core.ui.theme.Dimens.PaddingL
+import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
 import kotlinx.coroutines.launch

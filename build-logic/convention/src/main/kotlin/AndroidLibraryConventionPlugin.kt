@@ -5,9 +5,11 @@ import com.thedullpencil.mistriapp.configureKotlinAndroid
 import com.thedullpencil.mistriapp.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.withType
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -22,10 +24,15 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 testOptions.animationsDisabled = true
+                testOptions.unitTests.isIncludeAndroidResources = true
                 resourcePrefix = calculateResourcePrefix(path)
             }
             dependencies {
                 add("implementation", libs.findLibrary("androidx.tracing.ktx").get())
+            }
+
+            tasks.withType<Test>().configureEach {
+                failOnNoDiscoveredTests.set(false)
             }
         }
     }
