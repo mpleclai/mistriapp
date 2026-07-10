@@ -15,19 +15,19 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
-private const val NAME = "Zoe"
-private const val NAME_2 = "Alex"
+private const val ZOE = "Zoe"
+private const val ALEX = "Alex"
 private const val BIRTHDAY_1 = 11
 private const val BIRTHDAY_2 = 14
 
 class GetVillagerListUseCaseTest {
-    private val villager1 = VillagerData(NAME, Summer.name, BIRTHDAY_1)
-    private val villager2 = VillagerData(NAME_2, Spring.name, BIRTHDAY_2)
+    private val villager1 = VillagerData(ZOE, Summer.name, BIRTHDAY_1)
+    private val villager2 = VillagerData(ALEX, Spring.name, BIRTHDAY_2)
 
     private val villagerListData = listOf(villager1, villager2)
 
-    private val expectedVillager1 = Villager(NAME, Day(Summer, BIRTHDAY_1))
-    private val expectedVillager2 = Villager(NAME_2, Day(Spring, BIRTHDAY_2))
+    private val expectedVillager1 = Villager(ZOE, Day(Summer, BIRTHDAY_1))
+    private val expectedVillager2 = Villager(ALEX, Day(Spring, BIRTHDAY_2))
 
     private val emptyList = emptyList<VillagerData>()
 
@@ -55,14 +55,14 @@ class GetVillagerListUseCaseTest {
             assertEquals(expectedVillager2.name, name)
             assertEquals(expectedVillager2.birthday, birthday)
         }
-        assertEquals(listOf(NAME, NAME_2), villagers.first().map { it.name })
+        assertEquals(listOf(ZOE, ALEX), villagers.first().map { it.name })
     }
 
     @Test
     fun `villagers can be sorted by name`() = runTest {
         val villagers = getVillagerListUseCase(SortField.NAME).first()
 
-        assertEquals(listOf(NAME_2, NAME), villagers.map { it.name })
+        assertEquals(listOf(ALEX, ZOE), villagers.map { it.name })
     }
 
     @Test
