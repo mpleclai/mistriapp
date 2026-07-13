@@ -30,11 +30,21 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
+import com.thedullpencil.core.navigation.TopLevelRoute.Fishing
+import com.thedullpencil.core.navigation.TopLevelRoute.Home
+import com.thedullpencil.core.navigation.TopLevelRoute.Museum
+import com.thedullpencil.core.navigation.TopLevelRoute.Villagers
+import com.thedullpencil.core.ui.R.string.core_ui_app_name
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
+import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Fishing
+import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Home
+import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Museum
+import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Villagers
 import kotlinx.coroutines.launch
 
 @Composable
@@ -43,7 +53,6 @@ fun Mistriapp(
     appState: AppState,
 //    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
-    val currentDestination = appState.currentDestination
     val scrollBehavior = pinnedScrollBehavior(rememberTopAppBarState())
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -54,21 +63,10 @@ fun Mistriapp(
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            ModalDrawerSheet {
-                DrawerTitle("Drawer Title")
-                appState.topLevelDestinations.forEach { destination ->
-                    val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
-                    NavigationDrawerItem(
-                        label = { Text(stringResource(destination.title)) },
-                        icon = { Icon(destination.icon, null) },
-                        selected = selected,
-                        onClick = {
-                            appState.navigateToTopLevelDestination(destination)
-                            scope.launch { drawerState.close() }
-                        },
-                    )
-                }
-            }
+            MistriappDrawerSheet(
+                appState = appState,
+                onDestinationClick = { scope.launch { drawerState.close() } },
+            )
         }
     ) { ScaffoldContent(appState, scrollBehavior, onNavClick) }
 }
@@ -114,8 +112,35 @@ private fun ScaffoldContent(
     }
 }
 
-private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelDestination) =
-    this?.hierarchy?.any { it.route?.contains(destination.name, true) ?: false } ?: false
+@Composable
+private fun MistriappDrawerSheet(appState: AppState, onDestinationClick: () -> Unit) {
+    val currentDestination = appState.currentDestination
+    ModalDrawerSheet {
+        DrawerTitle(stringResource(core_ui_app_name))
+        appState.topLevelDestinations.forEach { destination ->
+            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+            NavigationDrawerItem(
+                label = { Text(stringResource(destination.title)) },
+                icon = { Icon(destination.icon, null) },
+                selected = selected,
+                onClick = {
+                    appState.navigateToTopLevelDestination(destination)
+                    onDestinationClick()
+                },
+            )
+        }
+    }
+}
+
+private fun NavDestination?.isTopLevelDestinationInHierarchy(dest: TopLevelDestination): Boolean =
+    this?.hierarchy?.any { entry ->
+        when (dest) {
+            Home -> entry.hasRoute<Home>()
+            Villagers -> entry.hasRoute<Villagers>()
+            Museum -> entry.hasRoute<Museum>()
+            Fishing -> entry.hasRoute<Fishing>()
+        }
+    } ?: false
 
 @Composable
 private fun DrawerTitle(text: String) =
