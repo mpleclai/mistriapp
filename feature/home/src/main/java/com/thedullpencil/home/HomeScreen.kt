@@ -33,14 +33,14 @@ fun HomeScreenContent(uiState: HomeUiState) {
     Column(Modifier.padding(PaddingL.toDp())) {
         when (uiState) {
             is Empty -> EmptyHomeScreen()
-            is HomeInfo -> HomeInfo(uiState)
+            is HomeInfo -> HomeInfoContent(uiState)
             else -> CircularProgressIndicator()
         }
     }
 }
 
 @Composable
-private fun HomeInfo(uiState: HomeInfo) {
+private fun HomeInfoContent(uiState: HomeInfo) {
     DateWidget(uiState.selectedProfile.currentDate, uiState.selectedProfile.currentYear)
     Spacer(Modifier.padding(PaddingS.toDp()))
     ProfileCard(uiState.selectedProfile.name)

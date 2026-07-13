@@ -24,7 +24,6 @@ import com.thedullpencil.core.ui.theme.mediumContrastDarkColorScheme
 import com.thedullpencil.core.ui.theme.mediumContrastLightColorScheme
 import com.thedullpencil.home.HomeScreenContent
 import com.thedullpencil.home.HomeUiState
-import com.thedullpencil.home.HomeUiState.HomeInfo
 import com.thedullpencil.mistriapp.ui.Mistriapp
 import com.thedullpencil.mistriapp.ui.TopAppBar
 import com.thedullpencil.mistriapp.ui.rememberAppState

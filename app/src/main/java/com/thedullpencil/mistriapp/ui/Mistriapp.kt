@@ -41,10 +41,6 @@ import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Fishing
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Home
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Museum
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Villagers
 import kotlinx.coroutines.launch
 
 @Composable
@@ -135,10 +131,10 @@ private fun MistriappDrawerSheet(appState: AppState, onDestinationClick: () -> U
 private fun NavDestination?.isTopLevelDestinationInHierarchy(dest: TopLevelDestination): Boolean =
     this?.hierarchy?.any { entry ->
         when (dest) {
-            Home -> entry.hasRoute<Home>()
-            Villagers -> entry.hasRoute<Villagers>()
-            Museum -> entry.hasRoute<Museum>()
-            Fishing -> entry.hasRoute<Fishing>()
+            TopLevelDestination.Home -> entry.hasRoute<Home>()
+            TopLevelDestination.Villagers -> entry.hasRoute<Villagers>()
+            TopLevelDestination.Museum -> entry.hasRoute<Museum>()
+            TopLevelDestination.Fishing -> entry.hasRoute<Fishing>()
         }
     } ?: false
 

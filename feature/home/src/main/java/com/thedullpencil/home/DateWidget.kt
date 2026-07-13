@@ -37,7 +37,7 @@ fun DateWidget(currentDate: Day, currentYear: Int) = Row(
     horizontalArrangement = SpaceEvenly,
     verticalAlignment = CenterVertically
 ) {
-    val date = remember { mutableStateOf(MistriappDate(currentDate, currentYear)) }
+    val date = remember(currentDate, currentYear) { mutableStateOf(MistriappDate(currentDate, currentYear)) }
     with(date.value) {
         DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getPreviousDate() }) {
             Icon(

@@ -15,10 +15,6 @@ import com.thedullpencil.core.navigation.TopLevelRoute.Home
 import com.thedullpencil.core.navigation.TopLevelRoute.Museum
 import com.thedullpencil.core.navigation.TopLevelRoute.Villagers
 import com.thedullpencil.mistriapp.navigation.TopLevelDestination
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Fishing
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Home
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Museum
-import com.thedullpencil.mistriapp.navigation.TopLevelDestination.Villagers
 
 @Composable
 fun rememberAppState(
@@ -33,10 +29,10 @@ class AppState(val navController: NavHostController) {
     val currentTopLevelDestination: TopLevelDestination?
         @Composable get() = currentDestination?.let { dest ->
             when {
-                dest.hasRoute<Home>() -> Home
-                dest.hasRoute<Villagers>() -> Villagers
-                dest.hasRoute<Museum>() -> Museum
-                dest.hasRoute<Fishing>() -> Fishing
+                dest.hasRoute<Home>() -> TopLevelDestination.Home
+                dest.hasRoute<Villagers>() -> TopLevelDestination.Villagers
+                dest.hasRoute<Museum>() -> TopLevelDestination.Museum
+                dest.hasRoute<Fishing>() -> TopLevelDestination.Fishing
                 else -> null
             }
         }
