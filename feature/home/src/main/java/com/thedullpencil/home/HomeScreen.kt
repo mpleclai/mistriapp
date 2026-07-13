@@ -1,5 +1,6 @@
 package com.thedullpencil.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement.SpaceEvenly
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,8 +19,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.filledTonalButtonColors
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults.pinnedScrollBehavior
+import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -29,17 +34,21 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.compose.ui.tooling.preview.PreviewDynamicColors
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import com.thedullpencil.core.ui.components.InfoBlock
 import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.components.ToInfoCard
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.Dimens.PaddingS
 import com.thedullpencil.core.ui.theme.toDp
+import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.MistriappDate
+import com.thedullpencil.core.util.Season
 import com.thedullpencil.core.util.getNextDate
 import com.thedullpencil.core.util.getPreviousDate
 import com.thedullpencil.core.util.toDateString
+import com.thedullpencil.domain.model.Profile
 import com.thedullpencil.home.HomeUiState.Empty
 import com.thedullpencil.home.HomeUiState.HomeInfo
 import com.thedullpencil.feature.home.R.string.feature_home_decrement_date
@@ -49,13 +58,10 @@ import com.thedullpencil.feature.home.R.string.feature_home_reminders
 import com.thedullpencil.feature.home.R.string.feature_home_select_profile
 import com.thedullpencil.feature.home.R.string.feature_home_selected_date
 
-@Preview
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
-    val homeUiState by viewModel.uiState.collectAsState()
-
+fun HomeScreenContent(uiState: HomeUiState) {
     Column(Modifier.padding(PaddingL.toDp())) {
-        when (homeUiState) {
+        when (uiState) {
             is Empty -> {
                 val selectProfile = stringResource(feature_home_select_profile)
                 Card(Modifier.fillMaxWidth()) {
@@ -64,13 +70,11 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             }
 
             is HomeInfo -> {
-                with(viewModel) {
-                    DateWidget(homeUiState as HomeInfo)
-                    Spacer(Modifier.padding(PaddingS.toDp()))
-                    ProfileCard(homeUiState as HomeInfo)
-                    Spacer(Modifier.padding(PaddingL.toDp()))
-                    RemindersSection()
-                }
+                DateWidget(uiState.selectedProfile.currentDate, uiState.selectedProfile.currentYear)
+                Spacer(Modifier.padding(PaddingS.toDp()))
+                ProfileCard(uiState.selectedProfile.name)
+                Spacer(Modifier.padding(PaddingL.toDp()))
+                RemindersSection()
             }
 
             else -> CircularProgressIndicator()
@@ -79,16 +83,20 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 }
 
 @Composable
-fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
+fun HomeScreen(viewModel: HomeViewModel) {
+    val homeUiState by viewModel.uiState.collectAsState()
+    HomeScreenContent(uiState = homeUiState)
+}
+
+@Composable
+fun DateWidget(currentDate: Day, currentYear: Int) = Row(
     Modifier
         .fillMaxWidth()
         .padding(PaddingL.toDp()),
     horizontalArrangement = SpaceEvenly,
     verticalAlignment = CenterVertically
 ) {
-    val date = remember{ mutableStateOf(
-        MistriappDate(homeUiState.selectedProfile.currentDate, homeUiState.selectedProfile.currentYear)
-    ) }
+    val date = remember { mutableStateOf(MistriappDate(currentDate, currentYear)) }
     with(date.value) {
         DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getPreviousDate() }) {
             Icon(
@@ -100,7 +108,7 @@ fun HomeViewModel.DateWidget(homeUiState: HomeInfo) = Row(
             date.value.toDateString(),
             Modifier.padding(horizontal = PaddingL.toDp())
         )
-        DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getNextDate()}) {
+        DateWidgetButton(onClick = { date.value = MistriappDate(day, year).getNextDate() }) {
             Icon(
                 AutoMirrored.Filled.KeyboardArrowRight,
                 stringResource(feature_home_increment_date)
@@ -121,12 +129,9 @@ fun DateWidgetButton(onClick: () -> Unit, content: @Composable () -> Unit) =
         colors = filledTonalButtonColors()
     ) { content() }
 
-
 @Composable
-fun HomeViewModel.ProfileCard(homeUiState: HomeInfo) = Card(Modifier.fillMaxWidth()) {
-    val name = homeUiState.selectedProfile.name
-    InfoItem(name = name, icon = Filled.AccountCircle).ToInfoCard(false)
-
+fun ProfileCard(profileName: String) = Card(Modifier.fillMaxWidth()) {
+    InfoItem(name = profileName, icon = Filled.AccountCircle).ToInfoCard(false)
 }
 
 @Composable

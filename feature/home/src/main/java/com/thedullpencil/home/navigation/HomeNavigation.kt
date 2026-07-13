@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.home.HomeScreen
 
 const val HOME_ROUTE = "home_route"
@@ -14,4 +15,4 @@ fun NavController.navigateToHome(navOptions: NavOptions? = null) { navigate(HOME
 fun NavGraphBuilder.homeScreen() = composable(route = HOME_ROUTE) { HomeRoute() }
 
 @Composable
-fun HomeRoute() { HomeScreen() }
+fun HomeRoute() { HomeScreen(viewModel = hiltViewModel()) }

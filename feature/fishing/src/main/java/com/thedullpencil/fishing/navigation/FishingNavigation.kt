@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.fishing.FishingScreen
 
 const val FISHING_ROUTE = "fishing_route"
@@ -14,4 +15,4 @@ fun NavController.navigateToFishing(navOptions: NavOptions? = null) { navigate(F
 fun NavGraphBuilder.fishingScreen() = composable(route = FISHING_ROUTE) { FishingRoute() }
 
 @Composable
-fun FishingRoute() { FishingScreen() }
+fun FishingRoute() { FishingScreen(viewModel = hiltViewModel()) }

@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.thedullpencil.core.ui.components.InfoBlock
 import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
@@ -19,16 +18,22 @@ import com.thedullpencil.villagers.VillagerViewState.VillagersInfo
 
 @Composable
 fun VillagerScreen(
+    viewModel: VillagerViewModel,
     onVillagerClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: VillagerViewModel = hiltViewModel(),
 ) {
     val villagersUiState by viewModel.uiState.collectAsState()
+    VillagerScreenContent(uiState = villagersUiState, onVillagerClick = onVillagerClick, modifier = modifier)
+}
 
-    when (villagersUiState) {
-        is VillagersInfo ->
-            VillagerList((villagersUiState as VillagersInfo).villagers, onVillagerClick, modifier)
-
+@Composable
+fun VillagerScreenContent(
+    uiState: VillagerViewState,
+    onVillagerClick: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    when (uiState) {
+        is VillagersInfo -> VillagerList(uiState.villagers, onVillagerClick, modifier)
         is Loading -> CircularProgressIndicator()
         is Empty -> VillagerList(emptyList(), onVillagerClick)
     }
@@ -41,7 +46,6 @@ fun VillagerList(
     modifier: Modifier = Modifier,
 ) = InfoBlock(
     modifier.padding(PaddingL.toDp()),
-    header = "Villagers",
     items = villagerList.toInfoItemList(onVillagerClick)
 )
 
