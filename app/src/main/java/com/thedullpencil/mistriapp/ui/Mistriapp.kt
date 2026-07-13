@@ -1,6 +1,5 @@
 package com.thedullpencil.mistriapp.ui
 
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -12,15 +11,9 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.material.icons.Icons.Filled
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.ModalDrawerSheet
@@ -29,7 +22,6 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults.pinnedScrollBehavior
-import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.material3.rememberTopAppBarState
@@ -37,9 +29,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow.Companion.Ellipsis
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
+import com.thedullpencil.core.navigation.TopLevelRoute.Fishing
+import com.thedullpencil.core.navigation.TopLevelRoute.Home
+import com.thedullpencil.core.navigation.TopLevelRoute.Museum
+import com.thedullpencil.core.navigation.TopLevelRoute.Villagers
+import com.thedullpencil.core.ui.R.string.core_ui_account_description
+import com.thedullpencil.core.ui.R.string.core_ui_app_name
+import com.thedullpencil.core.ui.R.string.core_ui_nav_menu_description
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
@@ -52,7 +51,6 @@ fun Mistriapp(
     appState: AppState,
 //    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
-    val currentDestination = appState.currentDestination
     val scrollBehavior = pinnedScrollBehavior(rememberTopAppBarState())
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -63,21 +61,10 @@ fun Mistriapp(
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            ModalDrawerSheet {
-                DrawerTitle("Drawer Title")
-                appState.topLevelDestinations.forEach { destination ->
-                    val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
-                    NavigationDrawerItem(
-                        label = { Text(stringResource(destination.title)) },
-                        icon = { Icon(destination.icon, null) },
-                        selected = selected,
-                        onClick = {
-                            appState.navigateToTopLevelDestination(destination)
-                            scope.launch { drawerState.close() }
-                        },
-                    )
-                }
-            }
+            MistriappDrawerSheet(
+                appState = appState,
+                onDestinationClick = { scope.launch { drawerState.close() } },
+            )
         }
     ) { ScaffoldContent(appState, scrollBehavior, onNavClick) }
 }
@@ -103,7 +90,13 @@ private fun ScaffoldContent(
                 .windowInsetsPadding(WindowInsets.safeDrawing.only(Horizontal)),
         ) {
             if (shouldShowTopAppBar) {
-                TopAppBar(scrollBehavior) { onTopAppBarActionClick() }
+                TopAppBar(
+                    title = stringResource(destination.title),
+                    scrollBehavior = scrollBehavior,
+                    onNavClick = { onTopAppBarActionClick() },
+                    navigationIconDescription = stringResource(core_ui_nav_menu_description),
+                    actionIconDescription = stringResource(core_ui_account_description),
+                )
             }
             Box(
                 // Workaround for https://issuetracker.google.com/338478720
@@ -119,33 +112,36 @@ private fun ScaffoldContent(
     }
 }
 
-private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelDestination) =
-    this?.hierarchy?.any { it.route?.contains(destination.name, true) ?: false } ?: false
+@Composable
+private fun MistriappDrawerSheet(appState: AppState, onDestinationClick: () -> Unit) {
+    val currentDestination = appState.currentDestination
+    ModalDrawerSheet {
+        DrawerTitle(stringResource(core_ui_app_name))
+        appState.topLevelDestinations.forEach { destination ->
+            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+            NavigationDrawerItem(
+                label = { Text(stringResource(destination.title)) },
+                icon = { Icon(destination.icon, null) },
+                selected = selected,
+                onClick = {
+                    appState.navigateToTopLevelDestination(destination)
+                    onDestinationClick()
+                },
+            )
+        }
+    }
+}
+
+private fun NavDestination?.isTopLevelDestinationInHierarchy(dest: TopLevelDestination): Boolean =
+    this?.hierarchy?.any { entry ->
+        when (dest) {
+            TopLevelDestination.Home -> entry.hasRoute<Home>()
+            TopLevelDestination.Villagers -> entry.hasRoute<Villagers>()
+            TopLevelDestination.Museum -> entry.hasRoute<Museum>()
+            TopLevelDestination.Fishing -> entry.hasRoute<Fishing>()
+        }
+    } ?: false
 
 @Composable
 private fun DrawerTitle(text: String) =
     Text(text, modifier = Modifier.padding(PaddingL.toDp()), style = typography.titleLarge)
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun TopAppBar(
-    scrollBehavior: TopAppBarScrollBehavior,
-    onNavClick: () -> Unit
-) = CenterAlignedTopAppBar(
-    title = { Text("Mistria Helper", maxLines = 1, overflow = Ellipsis) },
-    navigationIcon = {
-        IconButton(onNavClick) {
-            Icon(Filled.Menu, contentDescription = "Localized description")
-        }
-    },
-    actions = {
-        IconButton(onClick = {/* do something */ }) {
-            Icon(Filled.AccountCircle, contentDescription = "Localized description")
-        }
-    },
-    colors = topAppBarColors(
-        containerColor = colorScheme.primaryContainer,
-        titleContentColor = colorScheme.primary
-    ),
-    scrollBehavior = scrollBehavior,
-)

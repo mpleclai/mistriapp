@@ -34,6 +34,7 @@ extensions.configure<ApplicationExtension> {
 
 dependencies {
     implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
     implementation(project(":feature:villagers"))
     implementation(project(":feature:home"))
     implementation(project(":feature:museum"))
