@@ -94,8 +94,6 @@ private fun ScaffoldContent(
                     title = stringResource(destination.title),
                     scrollBehavior = scrollBehavior,
                     onNavClick = { onTopAppBarActionClick() },
-                    navigationIconDescription = stringResource(core_ui_nav_menu_description),
-                    actionIconDescription = stringResource(core_ui_account_description),
                 )
             }
             Box(
