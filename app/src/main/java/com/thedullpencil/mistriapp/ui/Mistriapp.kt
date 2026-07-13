@@ -1,16 +1,9 @@
 package com.thedullpencil.mistriapp.ui
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.WindowInsetsSides
-import androidx.compose.foundation.layout.WindowInsetsSides.Companion.Horizontal
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -36,9 +29,7 @@ import com.thedullpencil.core.navigation.TopLevelRoute.Fishing
 import com.thedullpencil.core.navigation.TopLevelRoute.Home
 import com.thedullpencil.core.navigation.TopLevelRoute.Museum
 import com.thedullpencil.core.navigation.TopLevelRoute.Villagers
-import com.thedullpencil.core.ui.R.string.core_ui_account_description
 import com.thedullpencil.core.ui.R.string.core_ui_app_name
-import com.thedullpencil.core.ui.R.string.core_ui_nav_menu_description
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
@@ -47,10 +38,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun Mistriapp(
-    appState: AppState,
-//    windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
-) {
+fun Mistriapp(appState: AppState) {
     val scrollBehavior = pinnedScrollBehavior(rememberTopAppBarState())
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -77,36 +65,24 @@ private fun ScaffoldContent(
     onTopAppBarActionClick: () -> Unit
 ) {
     val destination = appState.currentTopLevelDestination
-    val shouldShowTopAppBar = destination != null
     Scaffold(
         contentColor = colorScheme.onBackground,
-        contentWindowInsets = WindowInsets(0, 0, 0, 0),
-    ) { padding ->
-        Column(
-            Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .consumeWindowInsets(padding)
-                .windowInsetsPadding(WindowInsets.safeDrawing.only(Horizontal)),
-        ) {
-            if (shouldShowTopAppBar) {
+        topBar = {
+            if (destination != null) {
                 TopAppBar(
                     title = stringResource(destination.title),
                     scrollBehavior = scrollBehavior,
                     onNavClick = { onTopAppBarActionClick() },
                 )
             }
-            Box(
-                // Workaround for https://issuetracker.google.com/338478720
-                modifier = Modifier.consumeWindowInsets(
-                    if (shouldShowTopAppBar) {
-                        WindowInsets.safeDrawing.only(WindowInsetsSides.Top)
-                    } else {
-                        WindowInsets(0, 0, 0, 0)
-                    },
-                ),
-            ) { AppNavHost(appState = appState) }
-        }
+        },
+    ) { padding ->
+        Box(
+            Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .consumeWindowInsets(padding),
+        ) { AppNavHost(appState = appState) }
     }
 }
 
