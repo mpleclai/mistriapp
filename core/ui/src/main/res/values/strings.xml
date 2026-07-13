@@ -7,6 +7,10 @@
     <string name="core_ui_nav_museum">Museum</string>
     <string name="core_ui_nav_fishing">Fishing</string>
 
+    <!--    Accessibility-->
+    <string name="core_ui_nav_menu_description">Navigation Menu</string>
+    <string name="core_ui_account_description">User Profile</string>
+
     <!--    testing strings-->
     <string name="core_ui_divider_tag">divider</string>
     <string name="core_ui_name_tag">name</string>

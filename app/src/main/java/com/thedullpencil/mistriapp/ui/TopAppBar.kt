@@ -13,25 +13,31 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow.Companion.Ellipsis
-
+import com.thedullpencil.core.ui.R.string.core_ui_account_description
+import com.thedullpencil.core.ui.R.string.core_ui_nav_menu_description
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun TopAppBar(
     title: String,
     scrollBehavior: TopAppBarScrollBehavior,
-    onNavClick: () -> Unit
+    onNavClick: () -> Unit,
+    onProfileClick: () -> Unit = {},
 ) = CenterAlignedTopAppBar(
     title = { Text(title, maxLines = 1, overflow = Ellipsis, style = typography.headlineMedium) },
     navigationIcon = {
         IconButton(onNavClick) {
-            Icon(Filled.Menu, contentDescription = "Localized description")
+            Icon(Filled.Menu, contentDescription = stringResource(core_ui_nav_menu_description))
         }
     },
     actions = {
-        IconButton(onClick = {/* do something */ }) {
-            Icon(Filled.AccountCircle, contentDescription = "Localized description")
+        IconButton(onClick = onProfileClick) {
+            Icon(
+                Filled.AccountCircle,
+                contentDescription = stringResource(core_ui_account_description)
+            )
         }
     },
     colors = topAppBarColors(

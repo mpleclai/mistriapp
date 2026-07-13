@@ -36,7 +36,9 @@ import com.thedullpencil.core.navigation.TopLevelRoute.Fishing
 import com.thedullpencil.core.navigation.TopLevelRoute.Home
 import com.thedullpencil.core.navigation.TopLevelRoute.Museum
 import com.thedullpencil.core.navigation.TopLevelRoute.Villagers
+import com.thedullpencil.core.ui.R.string.core_ui_account_description
 import com.thedullpencil.core.ui.R.string.core_ui_app_name
+import com.thedullpencil.core.ui.R.string.core_ui_nav_menu_description
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.mistriapp.navigation.AppNavHost
@@ -92,6 +94,8 @@ private fun ScaffoldContent(
                     title = stringResource(destination.title),
                     scrollBehavior = scrollBehavior,
                     onNavClick = { onTopAppBarActionClick() },
+                    navigationIconDescription = stringResource(core_ui_nav_menu_description),
+                    actionIconDescription = stringResource(core_ui_account_description),
                 )
             }
             Box(
