@@ -69,7 +69,7 @@ private const val SUMMER = "summer"
 private const val FALL = "fall"
 private const val WINTER = "winter"
 
-fun getMistriappDate(string: String, day: Int): Day? = when (string) {
+fun getMistriappDate(string: String, day: Int): Day? = when (string.lowercase()) {
     SPRING -> Day(Spring, day)
     SUMMER -> Day(Summer, day)
     FALL -> Day(Fall, day)

@@ -21,16 +21,43 @@ private const val BIRTHDAY_1 = 11
 private const val BIRTHDAY_2 = 14
 
 class GetVillagerListUseCaseTest {
-    private val villager1 = VillagerData(ZOE, Summer.name, BIRTHDAY_1)
-    private val villager2 = VillagerData(ALEX, Spring.name, BIRTHDAY_2)
+    private val villager1 = VillagerData(
+        name = ZOE,
+        birthdaySeason = Summer.name,
+        birthdayDay = BIRTHDAY_1,
+        job = "Baker",
+        dateable = true,
+        lovedGifts = listOf("cake"),
+        likedGifts = listOf("bread"),
+        hatedGift = "fish",
+        dislikedGiftTags = listOf("junk"),
+    )
+    private val villager2 = VillagerData(
+        name = ALEX,
+        birthdaySeason = Spring.name,
+        birthdayDay = BIRTHDAY_2,
+        job = "Farmer",
+    )
 
     private val villagerListData = listOf(villager1, villager2)
 
-    private val expectedVillager1 = Villager(ZOE, Day(Summer, BIRTHDAY_1))
-    private val expectedVillager2 = Villager(ALEX, Day(Spring, BIRTHDAY_2))
+    private val expectedVillager1 = Villager(
+        name = ZOE,
+        birthday = Day(Summer, BIRTHDAY_1),
+        job = "Baker",
+        dateable = true,
+        lovedGifts = listOf("cake"),
+        likedGifts = listOf("bread"),
+        hatedGift = "fish",
+        dislikedGiftTags = listOf("junk"),
+    )
+    private val expectedVillager2 = Villager(
+        name = ALEX,
+        birthday = Day(Spring, BIRTHDAY_2),
+        job = "Farmer",
+    )
 
     private val emptyList = emptyList<VillagerData>()
-
 
     private val villagerRepository = mockk<VillagerRepository> {
         coEvery { this@mockk.getVillagers() } returns villagerListData
@@ -47,14 +74,8 @@ class GetVillagerListUseCaseTest {
     @Test
     fun `data maps correctly for list and keeps unsorted default order`() = runTest {
         val villagers = getVillagerListUseCase.invoke()
-        with(villagers.first().first()) {
-            assertEquals(expectedVillager1.name, name)
-            assertEquals(expectedVillager1.birthday, birthday)
-        }
-        with(villagers.first()[1]) {
-            assertEquals(expectedVillager2.name, name)
-            assertEquals(expectedVillager2.birthday, birthday)
-        }
+        assertEquals(expectedVillager1, villagers.first().first())
+        assertEquals(expectedVillager2, villagers.first()[1])
         assertEquals(listOf(ZOE, ALEX), villagers.first().map { it.name })
     }
 

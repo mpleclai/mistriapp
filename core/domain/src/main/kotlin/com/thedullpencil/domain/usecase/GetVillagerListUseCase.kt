@@ -23,8 +23,14 @@ class GetVillagerListUseCase @Inject constructor(
         val villagers = villagersRepository.getVillagers().map { villagerData: VillagerData ->
             with(villagerData) {
                 Villager(
-                    name,
-                    getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1)
+                    name = name,
+                    birthday = getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1),
+                    job = job,
+                    dateable = dateable,
+                    lovedGifts = lovedGifts,
+                    likedGifts = likedGifts,
+                    hatedGift = hatedGift,
+                    dislikedGiftTags = dislikedGiftTags,
                 )
             }
         }
