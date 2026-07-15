@@ -1,6 +1,7 @@
 package com.thedullpencil.domain.usecase
 
-import com.thedullpencil.core.util.toSeason
+import com.thedullpencil.core.util.toDisplayName
+import com.thedullpencil.core.util.toSeasonList
 import com.thedullpencil.data.model.FishData
 import com.thedullpencil.data.repository.FishRepository
 import com.thedullpencil.domain.model.Fish
@@ -20,7 +21,22 @@ class GetFishListUseCase @Inject constructor(
     operator fun invoke(sortBy: SortField = NONE): Flow<List<Fish>> = flow {
         val fish = fishRepository.getAllFish().map { fishData: FishData ->
             with(fishData) {
-                Fish(name, description, price, location, size, season.toSeason(), weather, rarity, museum, diveable)
+                Fish(
+                    name = name.toDisplayName(),
+                    item = item,
+                    seasons = seasons.toSeasonList(),
+                    waterType = waterType,
+                    weather = weather.orEmpty(),
+                    locations = locations.orEmpty(),
+                    size = size,
+                    legendary = legendary,
+                    rarity = rarity,
+                    retrieval = retrieval,
+                    isChest = isChest,
+                    perkArtifact = perkArtifact,
+                    hasPerk = hasPerk,
+                    baitOnly = baitOnly,
+                )
             }
         }
 

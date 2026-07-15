@@ -1,1419 +1,4535 @@
 [
-    {
-        "Image":null,
-        "Name":"Oarfish",
-        "Description":"A rare giant ocean fish found in winter.",
-        "Price":"100t",
-        "Location":"Ocean",
-        "Size":"Giant",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Archerfish",
-        "Description":"An uncommon small Tide Caverns fish. It squirts a stream of water to catch bugs.",
-        "Price":"45t",
-        "Location":"Tide Caverns",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Shrimp",
-        "Description":"A common small ocean crustacean found in spring.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Frog",
-        "Description":"A common small pond amphibian found in spring and fall.",
-        "Price":"35t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Rockbiter",
-        "Description":"An uncommon medium Deep Earth fish. This fish has an over-developed jaw to help it grind down stone.",
-        "Price":"55t",
-        "Location":"Deep Earth",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Leaf Fish",
-        "Description":"A legendary small river fish found on breezy falling leaf days in fall.",
-        "Price":"500t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Fall",
-        "Weather":"Wind",
-        "Rarity":"Legendary",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Cherry Fish",
-        "Description":"A legendary small pond fish found on breezy cherry blossom days in spring.",
-        "Price":"500t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Wind",
-        "Rarity":"Legendary",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Pike",
-        "Description":"A common large river fish found in all seasons.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Lightning Fish",
-        "Description":"A legendary medium river fish found on stormy days in summer.",
-        "Price":"500t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Summer",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm",
-        "Rarity":"Legendary",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Cave Shrimp",
-        "Description":"A common small Upper Mines crustacean. Its translucent body gives it a distinct appearance.",
-        "Price":"35t",
-        "Location":"Upper Mines",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Shardfin",
-        "Description":"An uncommon small Deep Earth fish. This fish's sleek fin has an iridescent shimmer.",
-        "Price":"55t",
-        "Location":"Deep Earth",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Pebble Minnow",
-        "Description":"A common small Deep Earth fish. The scales of these fish have taken on a pebbled texture to help it blend into its surroundings.",
-        "Price":"45t",
-        "Location":"Deep Earth",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Mini-Whale Shark",
-        "Description":"A rare large Tide Caverns fish. Despite its name, it is still very large.",
-        "Price":"100t",
-        "Location":"Tide Caverns",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sapphire Betta",
-        "Description":"A common small Tide Caverns fish. It has a lovely color.",
-        "Price":"40t",
-        "Location":"Tide Caverns",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Transparent Jellyfish",
-        "Description":"A common medium Tide Caverns invertebrate. It evolved in darkness, resulting in an unusual transparent appearance.",
-        "Price":"40t",
-        "Location":"Tide Caverns",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Water Balloon Fish",
-        "Description":"An uncommon medium Tide Caverns fish. It takes in an impressive amount of water to discourage predators.",
-        "Price":"50t",
-        "Location":"Tide Caverns",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Earth Eel",
-        "Description":"A common medium Deep Earth fish. Doesn't seem to have a mouth, so who knows what it eats.",
-        "Price":"45t",
-        "Location":"Deep Earth",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Emerald Horned Charger",
-        "Description":"A rare large Deep Earth fish. This large fish is nearly all horn, which seems to be made of pure emerald.",
-        "Price":"125t",
-        "Location":"Deep Earth",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Cave Eel",
-        "Description":"An uncommon medium Upper Mines fish. They build nests out of stone.",
-        "Price":"50t",
-        "Location":"Upper Mines",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Cave Shark",
-        "Description":"A rare large Upper Mines fish. How did they end up in the Mines?!",
-        "Price":"80t",
-        "Location":"Upper Mines",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Rock Guppy",
-        "Description":"An uncommon small Upper Mines fish. Very similar to a regular guppy.",
-        "Price":"40t",
-        "Location":"Upper Mines",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Stone Loach",
-        "Description":"A common medium Upper Mines fish. They easily blend in with the surrounding rocks.",
-        "Price":"35t",
-        "Location":"Upper Mines",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Koi",
-        "Description":"A common medium pond fish found in all seasons.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Carp",
-        "Description":"A common medium river fish found in spring.",
-        "Price":"35t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bluegill",
-        "Description":"A common small river fish found in spring.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Chub",
-        "Description":"A common small river fish found in Spring.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Trout",
-        "Description":"A common medium river fish found in all seasons.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Smallmouth Bass",
-        "Description":"A common small river fish found in all seasons.",
-        "Price":"35t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Pollock",
-        "Description":"A common large ocean fish found in all seasons.",
-        "Price":"35t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Paddlefish",
-        "Description":"A rare giant river fish found in spring.",
-        "Price":"90t",
-        "Location":"River",
-        "Size":"Giant",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Snow Fish",
-        "Description":"A legendary medium ocean fish found on blizzard days in winter.",
-        "Price":"500t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Winter",
-        "Weather":"Blizzard",
-        "Rarity":"Legendary",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Walleye",
-        "Description":"A common large river fish found on rainy days in spring.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Spring",
-        "Weather":"Rainy,\u00a0Rain",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Angel Fish",
-        "Description":"A common small pond fish found in spring.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Barb",
-        "Description":"A common small pond fish found in spring.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Brown Trout",
-        "Description":"A common large pond fish found in spring.",
-        "Price":"50t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Crucian Carp",
-        "Description":"A common medium pond fish found in spring.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Goldfish",
-        "Description":"A rare small pond fish found in spring.",
-        "Price":"120t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Anchovy",
-        "Description":"A common small ocean fish found in spring.",
-        "Price":"35t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Lobster",
-        "Description":"A common medium ocean crustacean found in spring.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Mackerel",
-        "Description":"A common large ocean fish found on rainy days in spring.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Spring",
-        "Weather":"Rainy,\u00a0Rain",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Ocean Sunfish",
-        "Description":"A rare giant ocean fish found in spring.",
-        "Price":"80t",
-        "Location":"Ocean",
-        "Size":"Giant",
-        "Season":"Spring",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bream",
-        "Description":"A common large river fish found in summer.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Loach",
-        "Description":"A common small river fish found in summer.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Minnow",
-        "Description":"A common small river fish found in summer.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sweetfish",
-        "Description":"A common medium river fish found in summer.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Tarpon",
-        "Description":"A rare giant river fish found in summer.",
-        "Price":"100t",
-        "Location":"River",
-        "Size":"Giant",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Tetra",
-        "Description":"A common small pond fish found in all seasons.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Catfish",
-        "Description":"An uncommon medium pond fish found in all seasons.",
-        "Price":"80t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"King Crab",
-        "Description":"A common large ocean crustacean found on snowy days in winter.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Winter",
-        "Weather":"Snow,\u00a0Blizzard",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bonito",
-        "Description":"A common medium ocean fish found in summer and winter.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Herring",
-        "Description":"A common small river fish found in winter.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Tuna",
-        "Description":"A common large ocean fish found in all seasons.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Salmon",
-        "Description":"A common large river fish found in spring and fall.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Squid",
-        "Description":"A common medium ocean cephalopod found in all seasons.",
-        "Price":"30t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sardine",
-        "Description":"A common small ocean fish found in all seasons.",
-        "Price":"35t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Crab",
-        "Description":"A common small ocean crustacean found in summer.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Cod",
-        "Description":"A common large ocean fish found in summer and winter.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Red Snapper",
-        "Description":"A common large ocean fish found in spring and fall.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Freshwater Eel",
-        "Description":"A common medium river fish found in winter.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Perch",
-        "Description":"A common large river fish found on rainy days in fall.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Fall",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sea Bream",
-        "Description":"A common medium ocean fish found in spring and fall.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sea Bass",
-        "Description":"A common medium ocean fish found in winter.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sand Lance",
-        "Description":"A common small ocean fish found in winter.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Horse Mackerel",
-        "Description":"A common small ocean fish found in winter.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Tilapia",
-        "Description":"A common small pond fish found in winter.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Burbot",
-        "Description":"A common large pond fish found on snowy days in winter.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Winter",
-        "Weather":"Snow,\u00a0Blizzard",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Flathead Catfish",
-        "Description":"A common medium pond fish found in winter.",
-        "Price":"80t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Alligator Gar",
-        "Description":"A rare giant pond fish found in winter.",
-        "Price":"100t",
-        "Location":"Pond",
-        "Size":"Giant",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Dace",
-        "Description":"A common small river fish found on snowy days in winter.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Winter",
-        "Weather":"Snow,\u00a0Blizzard",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bowfish",
-        "Description":"A common large river fish found in winter.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Mullet",
-        "Description":"A common medium ocean fish found in fall.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Halibut",
-        "Description":"A common large ocean fish found on rainy days in fall.",
-        "Price":"50t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Fall",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm,\u00a0Thunderstorm",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Butterfish",
-        "Description":"A common small ocean fish found in fall.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Killifish",
-        "Description":"A common small pond fish found in fall.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bluefish",
-        "Description":"A common large pond fish found on rainy days in fall.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Fall",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm,\u00a0Thunderstorm",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Brown Bullhead",
-        "Description":"A common medium pond fish found in summer.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Char",
-        "Description":"A common large ocean fish found in summer.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Grayling",
-        "Description":"A common small river fish found on rainy days in fall.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Fall",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm,\u00a0Thunderstorm",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Lamprey",
-        "Description":"A common small river fish found in fall.",
-        "Price":"70t",
-        "Location":"River",
-        "Size":"Small",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Razorback",
-        "Description":"A rare medium river fish found in fall.",
-        "Price":"160t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Fall",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm,\u00a0Thunderstorm",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Shad",
-        "Description":"A common medium river fish found in fall.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Dart",
-        "Description":"A common small ocean fish found in summer.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Giant Koi",
-        "Description":"A rare giant pond fish found in summer.",
-        "Price":"90t",
-        "Location":"Pond",
-        "Size":"Giant",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Golden Shiner",
-        "Description":"A common small pond fish found in summer.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Grouper",
-        "Description":"A rare giant ocean fish found in summer.",
-        "Price":"90t",
-        "Location":"Ocean",
-        "Size":"Giant",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Lake Chub",
-        "Description":"A common small pond fish found in summer.",
-        "Price":"35t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"White Perch",
-        "Description":"A rare medium pond fish found in fall.",
-        "Price":"120t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Striped Bass",
-        "Description":"A common large pond fish found in fall.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Shark",
-        "Description":"A rare giant ocean fish found in fall.",
-        "Price":"100t",
-        "Location":"Ocean",
-        "Size":"Giant",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Saury",
-        "Description":"A common large ocean fish found in fall.",
-        "Price":"45t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Shadow Bass",
-        "Description":"A rare medium river fish found in winter.",
-        "Price":"140t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Rare",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Giant Tilapia",
-        "Description":"An uncommon giant pond fish found in winter.",
-        "Price":"80t",
-        "Location":"Pond",
-        "Size":"Giant",
-        "Season":"Winter",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sauger",
-        "Description":"A common large pond fish found in summer.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Stingray",
-        "Description":"A common medium ocean fish found in summer.",
-        "Price":"40t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Summer",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Rainbow Trout",
-        "Description":"A common medium pond fish found in fall.",
-        "Price":"35t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"Yes",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Bullfrog",
-        "Description":"A common small pond catch found on rainy and snowy days in summer and winter.",
-        "Price":"45t",
-        "Location":"Pond",
-        "Size":"Small",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Rainy,\u00a0Rain,\u00a0Storm,\u00a0Thunderstorm,\u00a0Snow,\u00a0Blizzard",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Chum",
-        "Description":"An uncommon large river fish found in summer and winter.",
-        "Price":"75t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Gar",
-        "Description":"A common large river fish found in summer and winter.",
-        "Price":"35t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Goby",
-        "Description":"An uncommon medium river fish found in all seasons.",
-        "Price":"70t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Jellyfish",
-        "Description":"An uncommon medium ocean invertebrate found in spring and fall.",
-        "Price":"80t",
-        "Location":"Ocean",
-        "Size":"Small",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Octopus",
-        "Description":"An uncommon large ocean cephalopod found in summer and winter.",
-        "Price":"70t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Puffer Fish",
-        "Description":"An uncommon medium ocean fish found in summer and winter.",
-        "Price":"90t",
-        "Location":"Ocean",
-        "Size":"Medium",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Roach",
-        "Description":"A common medium pond fish found in all seasons.",
-        "Price":"35t",
-        "Location":"Pond",
-        "Size":"Medium",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Rock Bass",
-        "Description":"A common medium river fish found in spring and fall.",
-        "Price":"40t",
-        "Location":"River",
-        "Size":"Medium",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"Yes"
-    },
-    {
-        "Image":null,
-        "Name":"Snakehead",
-        "Description":"An uncommon large pond fish found in spring and fall.",
-        "Price":"60t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Snapping Turtle",
-        "Description":"A common large pond reptile found in summer and winter.",
-        "Price":"40t",
-        "Location":"Pond",
-        "Size":"Large",
-        "Season":"Summer \u00a0Winter",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Sturgeon",
-        "Description":"An uncommon large river fish found in spring and fall.",
-        "Price":"80t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Swordfish",
-        "Description":"An uncommon large ocean fish found in spring and fall.",
-        "Price":"80t",
-        "Location":"Ocean",
-        "Size":"Large",
-        "Season":"Spring \u00a0Fall",
-        "Weather":"Any",
-        "Rarity":"Uncommon",
-        "Museum":"No",
-        "Diveable":"No"
-    },
-    {
-        "Image":null,
-        "Name":"Turtle",
-        "Description":"A common large pond reptile found in all seasons.",
-        "Price":"45t",
-        "Location":"River",
-        "Size":"Large",
-        "Season":"All",
-        "Weather":"Any",
-        "Rarity":"Common",
-        "Museum":"No",
-        "Diveable":"No"
-    }
+  {
+    "item": "treasure_box_wood",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "wood_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_wood"
+  },
+  {
+    "item": "treasure_box_wood",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "wood_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_wood_large"
+  },
+  {
+    "item": "treasure_box_copper",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "copper_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_copper"
+  },
+  {
+    "item": "treasure_box_copper",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "copper_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_copper_large"
+  },
+  {
+    "item": "treasure_box_silver",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "silver_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_silver"
+  },
+  {
+    "item": "treasure_box_silver",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "silver_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_silver_large"
+  },
+  {
+    "item": "treasure_box_gold",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "gold_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_gold"
+  },
+  {
+    "item": "treasure_box_gold",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "gold_chest",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": true,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "treasure_box_gold_large"
+  },
+  {
+    "item": "fiber",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "fibre_small"
+  },
+  {
+    "item": "fiber",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "fibre_medium"
+  },
+  {
+    "item": "basic_wood",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "wood_small"
+  },
+  {
+    "item": "basic_wood",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "wood_medium"
+  },
+  {
+    "item": "clay",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "clay_small"
+  },
+  {
+    "item": "clay",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "clay_medium"
+  },
+  {
+    "item": "clay",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "clay_large"
+  },
+  {
+    "item": "glass",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "glass_small"
+  },
+  {
+    "item": "glass",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "glass_medium"
+  },
+  {
+    "item": "glass",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "junk",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "glass_large"
+  },
+  {
+    "item": "smallmouth_bass",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "smallmouth_bass"
+  },
+  {
+    "item": "bluegill",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bluegill"
+  },
+  {
+    "item": "chub",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "chub"
+  },
+  {
+    "item": "grayling",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "grayling"
+  },
+  {
+    "item": "trout",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "trout"
+  },
+  {
+    "item": "carp",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "carp"
+  },
+  {
+    "item": "rock_bass",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rock_bass"
+  },
+  {
+    "item": "goby",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "goby"
+  },
+  {
+    "item": "pike",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "pike"
+  },
+  {
+    "item": "salmon",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "salmon"
+  },
+  {
+    "item": "walleye",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "walleye"
+  },
+  {
+    "item": "sturgeon",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sturgeon"
+  },
+  {
+    "item": "paddlefish",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "paddlefish"
+  },
+  {
+    "item": "minnow",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "minnow"
+  },
+  {
+    "item": "loach",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "loach"
+  },
+  {
+    "item": "dace",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "dace"
+  },
+  {
+    "item": "sweetfish",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sweetfish"
+  },
+  {
+    "item": "gar",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "gar"
+  },
+  {
+    "item": "bream",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bream"
+  },
+  {
+    "item": "chum",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "chum"
+  },
+  {
+    "item": "tarpon",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "tarpon"
+  },
+  {
+    "item": "lightning_fish",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": true,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": "legendary",
+    "bait_only": false,
+    "name": "lightning_fish"
+  },
+  {
+    "item": "lamprey",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "lamprey"
+  },
+  {
+    "item": "shad",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "shad"
+  },
+  {
+    "item": "perch",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "perch"
+  },
+  {
+    "item": "razorback",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "razorback"
+  },
+  {
+    "item": "leaf_fish",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": [
+      "special"
+    ],
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": true,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": "legendary",
+    "bait_only": false,
+    "name": "leaf_fish"
+  },
+  {
+    "item": "herring",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "herring"
+  },
+  {
+    "item": "freshwater_eel",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "freshwater_eel"
+  },
+  {
+    "item": "bowfish",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bowfish"
+  },
+  {
+    "item": "shadow_bass",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "shadow_bass"
+  },
+  {
+    "item": "sardine",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sardine"
+  },
+  {
+    "item": "shrimp",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "shrimp"
+  },
+  {
+    "item": "anchovy",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "anchovy"
+  },
+  {
+    "item": "butterfish",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "butterfish"
+  },
+  {
+    "item": "squid",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "squid"
+  },
+  {
+    "item": "lobster",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "lobster"
+  },
+  {
+    "item": "sea_bream",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sea_bream"
+  },
+  {
+    "item": "jellyfish",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "jellyfish"
+  },
+  {
+    "item": "tuna",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "tuna"
+  },
+  {
+    "item": "pollock",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "pollock"
+  },
+  {
+    "item": "mackerel",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "mackerel"
+  },
+  {
+    "item": "red_snapper",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "red_snapper"
+  },
+  {
+    "item": "swordfish",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "swordfish"
+  },
+  {
+    "item": "ocean_sunfish",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "ocean_sunfish"
+  },
+  {
+    "item": "crab",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "crab"
+  },
+  {
+    "item": "dart",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "dart"
+  },
+  {
+    "item": "sand_lance",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sand_lance"
+  },
+  {
+    "item": "stingray",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "stingray"
+  },
+  {
+    "item": "bonito",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bonito"
+  },
+  {
+    "item": "puffer_fish",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "puffer_fish"
+  },
+  {
+    "item": "char",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "char"
+  },
+  {
+    "item": "cod",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "cod"
+  },
+  {
+    "item": "octopus",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "octopus"
+  },
+  {
+    "item": "grouper",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "grouper"
+  },
+  {
+    "item": "saury",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "saury"
+  },
+  {
+    "item": "mullet",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "mullet"
+  },
+  {
+    "item": "halibut",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "halibut"
+  },
+  {
+    "item": "shark",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "shark"
+  },
+  {
+    "item": "horse_mackerel",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "horse_mackerel"
+  },
+  {
+    "item": "sea_bass",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sea_bass"
+  },
+  {
+    "item": "king_crab",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "king_crab"
+  },
+  {
+    "item": "oarfish",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "oarfish"
+  },
+  {
+    "item": "snow_fish",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": [
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": true,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": "legendary",
+    "bait_only": false,
+    "name": "snow_fish"
+  },
+  {
+    "item": "tetra",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "tetra"
+  },
+  {
+    "item": "barb",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "barb"
+  },
+  {
+    "item": "angel_fish",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "angel_fish"
+  },
+  {
+    "item": "frog",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "frog"
+  },
+  {
+    "item": "roach",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "roach"
+  },
+  {
+    "item": "crucian_carp",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "crucian_carp"
+  },
+  {
+    "item": "koi",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "koi"
+  },
+  {
+    "item": "catfish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "catfish"
+  },
+  {
+    "item": "turtle",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "turtle"
+  },
+  {
+    "item": "striped_bass",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "striped_bass"
+  },
+  {
+    "item": "brown_trout",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "brown_trout"
+  },
+  {
+    "item": "snakehead",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "snakehead"
+  },
+  {
+    "item": "goldfish",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "goldfish"
+  },
+  {
+    "item": "cherry_fish",
+    "seasons": [
+      "spring"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "special"
+    ],
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": true,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": "legendary",
+    "bait_only": false,
+    "name": "cherry_fish"
+  },
+  {
+    "item": "lake_chub",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "lake_chub"
+  },
+  {
+    "item": "golden_shiner",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "golden_shiner"
+  },
+  {
+    "item": "bullfrog",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bullfrog"
+  },
+  {
+    "item": "brown_bullhead",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "brown_bullhead"
+  },
+  {
+    "item": "snapping_turtle",
+    "seasons": [
+      "summer",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing",
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "snapping_turtle"
+  },
+  {
+    "item": "sauger",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sauger"
+  },
+  {
+    "item": "giant_tilapia",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "giant_tilapia"
+  },
+  {
+    "item": "alligator_gar",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "alligator_gar"
+  },
+  {
+    "item": "killifish",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "killifish"
+  },
+  {
+    "item": "rainbow_trout",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rainbow_trout"
+  },
+  {
+    "item": "bluefish",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bluefish"
+  },
+  {
+    "item": "white_perch",
+    "seasons": [
+      "fall"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "white_perch"
+  },
+  {
+    "item": "tilapia",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "tilapia"
+  },
+  {
+    "item": "flathead_catfish",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "flathead_catfish"
+  },
+  {
+    "item": "burbot",
+    "seasons": [
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "ultra_common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "burbot"
+  },
+  {
+    "item": "giant_koi",
+    "seasons": [
+      "summer"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "giant_koi"
+  },
+  {
+    "item": "sunny",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": [
+      "deep_woods"
+    ],
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sunny"
+  },
+  {
+    "item": "forest_perch",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": [
+      "inclement",
+      "heavy_inclement"
+    ],
+    "locations": [
+      "deep_woods"
+    ],
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "forest_perch"
+  },
+  {
+    "item": "silver_redhorse",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": [
+      "deep_woods"
+    ],
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "silver_redhorse"
+  },
+  {
+    "item": "lake_trout",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": [
+      "deep_woods"
+    ],
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "lake_trout"
+  },
+  {
+    "item": "muskie",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": [
+      "deep_woods"
+    ],
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "muskie"
+  },
+  {
+    "item": "cave_shrimp",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "cave_shrimp"
+  },
+  {
+    "item": "rock_guppy",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rock_guppy"
+  },
+  {
+    "item": "stone_loach",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "stone_loach"
+  },
+  {
+    "item": "cave_eel",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "cave_eel"
+  },
+  {
+    "item": "cave_shark",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "cave_shark"
+  },
+  {
+    "item": "sapphire_betta",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sapphire_betta"
+  },
+  {
+    "item": "archerfish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "archerfish"
+  },
+  {
+    "item": "transparent_jellyfish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "transparent_jellyfish"
+  },
+  {
+    "item": "water_balloon_fish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "water_balloon_fish"
+  },
+  {
+    "item": "mini_whale_shark",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "mini_whale_shark"
+  },
+  {
+    "item": "emerald_horned_charger",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "emerald_horned_charger"
+  },
+  {
+    "item": "earth_eel",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "earth_eel"
+  },
+  {
+    "item": "rockbiter",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rockbiter"
+  },
+  {
+    "item": "pebble_minnow",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "pebble_minnow"
+  },
+  {
+    "item": "shardfin",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "shardfin"
+  },
+  {
+    "item": "lava_piranha",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "lava_piranha"
+  },
+  {
+    "item": "candelabra_seadragon",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "candelabra_seadragon"
+  },
+  {
+    "item": "armored_bass",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "armored_bass"
+  },
+  {
+    "item": "sulfur_crab",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sulfur_crab"
+  },
+  {
+    "item": "firesail_fish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "firesail_fish"
+  },
+  {
+    "item": "winged_shrimp",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "winged_shrimp"
+  },
+  {
+    "item": "gazer",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "gazer"
+  },
+  {
+    "item": "luminescent_crab",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "luminescent_crab"
+  },
+  {
+    "item": "giant_jellyfish",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "giant_jellyfish"
+  },
+  {
+    "item": "coelacanth",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "coelacanth"
+  },
+  {
+    "item": "seaweed",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "seaweed"
+  },
+  {
+    "item": "clam",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "clam"
+  },
+  {
+    "item": "pearl_clam",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "pearl_clam"
+  },
+  {
+    "item": "freshwater_oyster",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "freshwater_oyster"
+  },
+  {
+    "item": "crayfish",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "crayfish"
+  },
+  {
+    "item": "paper_pondshell",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "paper_pondshell"
+  },
+  {
+    "item": "pond_snail",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "pond_snail"
+  },
+  {
+    "item": "river_snail",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "river_snail"
+  },
+  {
+    "item": "newt",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "newt"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_divespots",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "sunken_secrets",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rusted_shield"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_divespots",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "sunken_secrets",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rock_with_a_hole"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_divespots",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "sunken_secrets",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rainbow_seaweed"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_divespots",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "sunken_secrets",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "criminal_confession"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_divespots",
+    "retrieval": [
+      "divespot"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "sunken_secrets",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "mermaids_comb"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_fishing",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "aquatic_antiquities",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rubber_fish"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_fishing",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "aquatic_antiquities",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "giant_fish_scale"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_fishing",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "aquatic_antiquities",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "coin_lump"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_fishing",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "aquatic_antiquities",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "water_sphere"
+  },
+  {
+    "item": "unidentified_artifact",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "ocean",
+      "river",
+      "pond"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "any",
+    "any_size": true,
+    "legendary": false,
+    "rarity": "artifact_fishing",
+    "retrieval": [
+      "fishing"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": "aquatic_antiquities",
+    "has_perk": null,
+    "bait_only": false,
+    "name": "rusted_treasure_chest"
+  },
+  {
+    "item": "void_pearl",
+    "seasons": null,
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "void_pearl"
+  },
+  {
+    "item": "massive_minnow",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond",
+      "river",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "fishing",
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": true,
+    "name": "massive_minnow"
+  },
+  {
+    "item": "copper_rockfish",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond",
+      "river",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "very_very_common",
+    "retrieval": [
+      "fishing",
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": true,
+    "name": "copper_rockfish"
+  },
+  {
+    "item": "iron_fish",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond",
+      "river",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing",
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": true,
+    "name": "iron_fish"
+  },
+  {
+    "item": "silver_squid",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond",
+      "river",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fishing",
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": true,
+    "name": "silver_squid"
+  },
+  {
+    "item": "golden_eel",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "pond",
+      "river",
+      "ocean"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "giant",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fishing",
+      "mines"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": true,
+    "name": "golden_eel"
+  },
+  {
+    "item": "blue_crab",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fish_trap"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "blue_crab"
+  },
+  {
+    "item": "sea_urchin",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "small",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fish_trap"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "sea_urchin"
+  },
+  {
+    "item": "bait_thief",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "common",
+    "retrieval": [
+      "fish_trap"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "bait_thief"
+  },
+  {
+    "item": "hake",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "medium",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "uncommon",
+    "retrieval": [
+      "fish_trap"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "hake"
+  },
+  {
+    "item": "amberjack",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "hours": null,
+    "water_type": [
+      "river"
+    ],
+    "weather": null,
+    "locations": null,
+    "size": "large",
+    "any_size": false,
+    "legendary": false,
+    "rarity": "rare",
+    "retrieval": [
+      "fish_trap"
+    ],
+    "recipe": false,
+    "is_chest": false,
+    "perk_artifact": null,
+    "has_perk": null,
+    "bait_only": false,
+    "name": "amberjack"
+  }
 ]

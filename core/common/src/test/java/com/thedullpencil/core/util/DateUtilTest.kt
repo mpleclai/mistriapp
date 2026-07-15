@@ -5,7 +5,6 @@ import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.Season.Summer
 import com.thedullpencil.core.util.Season.Winter
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
@@ -45,20 +44,6 @@ class DateUtilTest {
     @MethodSource("dateStrings")
     fun `date strings are properly formatted`(input: MistriappDate, expected: String) {
         assertEquals(expected, input.toDateString())
-    }
-
-    @ParameterizedTest(name = "{0} to season list")
-    @MethodSource("seasonStrings")
-    fun `season strings are properly mapped`(input: String, expected: List<Season>) {
-        assertEquals(expected, input.toSeason())
-    }
-
-    @ParameterizedTest(name = "{0} throws")
-    @MethodSource("invalidSeasonStrings")
-    fun `invalid season strings throw`(input: String) {
-        assertThrows(IllegalArgumentException::class.java) {
-            input.toSeason()
-        }
     }
 
     companion object {
@@ -130,23 +115,6 @@ class DateUtilTest {
             of(firstDateMonth, "Fall 1, Year 1"),
             of(lastDateYear1, "Winter 28, Year 1"),
             of(lastDateMonth, "Fall 28, Year 1"),
-        )
-
-        @JvmStatic
-        fun seasonStrings() = listOf(
-            of("Spring", listOf(Spring)),
-            of("Summer", listOf(Summer)),
-            of("Fall", listOf(Fall)),
-            of("Winter", listOf(Winter)),
-            of("All", Season.entries),
-            of("Spring \u00a0Fall", listOf(Spring, Fall)),
-            of("Summer \\u00a0Winter", listOf(Summer, Winter)),
-        )
-
-        @JvmStatic
-        fun invalidSeasonStrings() = listOf(
-            of(""),
-            of("Unknown"),
         )
     }
 }

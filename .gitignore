@@ -17,6 +17,8 @@ build/
 # Local configuration file (sdk path, etc)
 local.properties
 
+game-data/
+
 # MacOS
 .DS_Store
 
