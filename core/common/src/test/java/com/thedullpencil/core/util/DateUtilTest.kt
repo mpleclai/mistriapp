@@ -5,7 +5,6 @@ import com.thedullpencil.core.util.Season.Spring
 import com.thedullpencil.core.util.Season.Summer
 import com.thedullpencil.core.util.Season.Winter
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
@@ -47,18 +46,10 @@ class DateUtilTest {
         assertEquals(expected, input.toDateString())
     }
 
-    @ParameterizedTest(name = "{0} to season list")
-    @MethodSource("seasonStrings")
-    fun `season strings are properly mapped`(input: String, expected: List<Season>) {
-        assertEquals(expected, input.toSeason())
-    }
-
-    @ParameterizedTest(name = "{0} throws")
-    @MethodSource("invalidSeasonStrings")
-    fun `invalid season strings throw`(input: String) {
-        assertThrows(IllegalArgumentException::class.java) {
-            input.toSeason()
-        }
+    @ParameterizedTest(name = "{0} → {1}")
+    @MethodSource("seasonListCases")
+    fun `toSeasonList resolves correctly`(input: List<String>?, expected: List<Season>) {
+        assertEquals(expected, input.toSeasonList())
     }
 
     companion object {
@@ -133,20 +124,12 @@ class DateUtilTest {
         )
 
         @JvmStatic
-        fun seasonStrings() = listOf(
-            of("Spring", listOf(Spring)),
-            of("Summer", listOf(Summer)),
-            of("Fall", listOf(Fall)),
-            of("Winter", listOf(Winter)),
-            of("All", Season.entries),
-            of("Spring \u00a0Fall", listOf(Spring, Fall)),
-            of("Summer \\u00a0Winter", listOf(Summer, Winter)),
-        )
-
-        @JvmStatic
-        fun invalidSeasonStrings() = listOf(
-            of(""),
-            of("Unknown"),
+        fun seasonListCases() = listOf(
+            of(null, Season.entries),
+            of(listOf("spring"), listOf(Spring)),
+            of(listOf("summer", "fall"), listOf(Summer, Fall)),
+            of(listOf("winter", "summer"), listOf(Winter, Summer)),
+            of(emptyList<String>(), emptyList<Season>()),
         )
     }
 }

@@ -64,13 +64,12 @@ fun Int.notFirstDayOfMonth(): Boolean = this != FIRST_DAY
 const val FIRST_DAY = 1
 const val LAST_DAY = 28
 
-private const val SPRING = "Spring"
-private const val SUMMER = "Summer"
-private const val FALL = "Fall"
-private const val WINTER = "Winter"
-private const val ALL = "All"
+private const val SPRING = "spring"
+private const val SUMMER = "summer"
+private const val FALL = "fall"
+private const val WINTER = "winter"
 
-fun getMistriappDate(string: String, day: Int): Day? = when (string) {
+fun getMistriappDate(string: String, day: Int): Day? = when (string.lowercase()) {
     SPRING -> Day(Spring, day)
     SUMMER -> Day(Summer, day)
     FALL -> Day(Fall, day)
@@ -78,34 +77,15 @@ fun getMistriappDate(string: String, day: Int): Day? = when (string) {
     else -> null
 }
 
-fun String.toSeason(): List<Season> {
-    // Note some of this regex logic can probably be dropped if data source changes
-    val normalizedString = getNormalizedString()
-    if (normalizedString == ALL) {
-        return Season.entries
-    }
-
-    val seasons = normalizedString
-        .split(Regex("\\s+"))
-        .mapNotNull { value ->
-            when (value) {
-                SPRING -> Spring
-                SUMMER -> Summer
-                FALL -> Fall
-                WINTER -> Winter
-                else -> null
-            }
+fun List<String>?.toSeasonList(): List<Season> {
+    if (this == null) return Season.entries
+    return mapNotNull { value ->
+        when (value.lowercase()) {
+            SPRING -> Spring
+            SUMMER -> Summer
+            FALL -> Fall
+            WINTER -> Winter
+            else -> null
         }
-        .distinct()
-
-    require(seasons.isNotEmpty()) {
-        "Unknown season value: '$this' (normalized: '$normalizedString')"
     }
-    return seasons
 }
-
-// Note some of this regex logic can probably be dropped if data source changes
-private fun String.getNormalizedString(): String =
-    replace("\\u00a0", " ")
-        .replace('\u00A0', ' ')
-        .trim()

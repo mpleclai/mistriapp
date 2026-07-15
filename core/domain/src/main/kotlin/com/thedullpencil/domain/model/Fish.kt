@@ -4,13 +4,17 @@ import com.thedullpencil.core.util.Season
 
 data class Fish(
     val name: String,
-    val description: String,
-    val price: String,
-    val location: String,
+    val item: String,
+    val seasons: List<Season>,
+    val waterType: List<String>,
+    val weather: List<String>,
+    val locations: List<String>,
     val size: String,
-    val season: List<Season>,
-    val weather: String,
+    val legendary: Boolean,
     val rarity: String,
-    val museum: String,
-    val diveable: String
+    val retrieval: List<String>,
+    val isChest: Boolean,
+    val perkArtifact: String?,
+    val hasPerk: String?,
+    val baitOnly: Boolean,
 )

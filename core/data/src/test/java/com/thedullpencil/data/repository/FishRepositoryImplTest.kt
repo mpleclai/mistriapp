@@ -23,7 +23,7 @@ class FishRepositoryImplTest {
 
     @Test
     fun `getFishData returns data when fish name exists`() = runBlocking {
-        val result = repository.getFishData("Anchovy")
+        val result = repository.getFishData("anchovy")
 
         assertNotNull(result)
     }

@@ -2,6 +2,8 @@ package com.thedullpencil.domain
 
 import com.thedullpencil.core.util.Season.Fall
 import com.thedullpencil.core.util.Season.Spring
+import com.thedullpencil.core.util.Season.Summer
+import com.thedullpencil.core.util.Season.Winter
 import com.thedullpencil.core.util.Season
 import com.thedullpencil.data.model.FishData
 import com.thedullpencil.data.repository.FishRepository
@@ -15,33 +17,43 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
-private const val NAME_A = "Anchovy"
-private const val NAME_B = "Bass"
+private const val NAME_A = "anchovy"
+private const val NAME_B = "bass"
 
 class GetFishListUseCaseTest {
     private val fishOne = FishData(
         name = NAME_B,
-        description = "desc b",
-        price = "100",
-        location = "river",
+        item = NAME_B,
+        seasons = listOf("spring", "fall"),
+        waterType = listOf("river"),
+        weather = null,
+        locations = null,
         size = "small",
-        season = "Spring \\u00a0Fall",
-        weather = "sunny",
+        legendary = false,
         rarity = "common",
-        museum = "yes",
-        diveable = "no"
+        retrieval = listOf("fishing"),
+        isChest = false,
+        recipe = false,
+        perkArtifact = null,
+        hasPerk = null,
+        baitOnly = false,
     )
     private val fishTwo = FishData(
         name = NAME_A,
-        description = "desc a",
-        price = "200",
-        location = "lake",
+        item = NAME_A,
+        seasons = null,
+        waterType = listOf("ocean"),
+        weather = listOf("inclement"),
+        locations = listOf("beach"),
         size = "medium",
-        season = "All",
-        weather = "rain",
+        legendary = true,
         rarity = "rare",
-        museum = "yes",
-        diveable = "yes"
+        retrieval = listOf("fishing", "divespot"),
+        isChest = false,
+        recipe = false,
+        perkArtifact = null,
+        hasPerk = "legendary",
+        baitOnly = false,
     )
 
     private val fishRepository = mockk<FishRepository> {
@@ -56,28 +68,32 @@ class GetFishListUseCaseTest {
 
         assertEquals(
             Fish(
-                name = NAME_B,
-                description = "desc b",
-                price = "100",
-                location = "river",
+                name = "Bass",
+                item = NAME_B,
+                seasons = listOf(Spring, Fall),
+                waterType = listOf("river"),
+                weather = emptyList(),
+                locations = emptyList(),
                 size = "small",
-                season = listOf(Spring, Fall),
-                weather = "sunny",
+                legendary = false,
                 rarity = "common",
-                museum = "yes",
-                diveable = "no"
+                retrieval = listOf("fishing"),
+                isChest = false,
+                perkArtifact = null,
+                hasPerk = null,
+                baitOnly = false,
             ),
             fish.first()
         )
-        assertEquals(listOf(NAME_B, NAME_A), fish.map { it.name })
+        assertEquals(listOf("Bass", "Anchovy"), fish.map { it.name })
     }
 
     @Test
     fun `fish can be sorted by name`() = runTest {
         val fish = getFishListUseCase(SortField.NAME).first()
 
-        assertEquals(listOf(NAME_A, NAME_B), fish.map { it.name })
-        assertEquals(Season.entries, fish.first().season)
-        assertEquals(listOf(Spring, Fall), fish.last().season)
+        assertEquals(listOf("Anchovy", "Bass"), fish.map { it.name })
+        assertEquals(Season.entries, fish.first().seasons)
+        assertEquals(listOf(Spring, Fall), fish.last().seasons)
     }
 }
