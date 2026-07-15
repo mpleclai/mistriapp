@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.thedullpencil.core.ui.components.InfoBlock
+import com.thedullpencil.core.ui.components.InfoCardListBlock
 import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.theme.Dimens
 import com.thedullpencil.core.ui.theme.toDp
@@ -29,7 +29,7 @@ fun FishingScreenContent(uiState: FishingViewState, modifier: Modifier = Modifie
 }
 
 @Composable
-fun FishList(fishList: List<Fish>, modifier: Modifier = Modifier) = InfoBlock(
+fun FishList(fishList: List<Fish>, modifier: Modifier = Modifier) = InfoCardListBlock(
     modifier.padding(Dimens.PaddingL.toDp()),
     items = fishList.toInfoItemList()
 )
