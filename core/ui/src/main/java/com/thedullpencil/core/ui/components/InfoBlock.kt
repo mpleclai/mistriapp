@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.thedullpencil.core.ui.theme.Dimens.PaddingM
+import com.thedullpencil.core.ui.theme.Dimens.PaddingS
 import com.thedullpencil.core.ui.theme.toDp
 
 @Composable
@@ -24,7 +25,22 @@ fun InfoBlock(
             items = items,
             key = { index, item -> item.id ?: "${item.derivedKey()}#$index" }
         ) { _, item ->
-            item.ToInfoCard()
+            item.ToListItem()
+        }
+    }
+}
+
+@Composable
+fun InfoCardListBlock(
+    modifier: Modifier = Modifier,
+    items: List<InfoItem> = emptyList()
+) = LazyColumn(modifier = modifier.fillMaxWidth()) {
+    itemsIndexed(
+        items = items,
+        key = { index, item -> item.id ?: "${item.derivedKey()}#$index" }
+    ) { _, item ->
+        Card(Modifier.fillMaxWidth().padding(vertical = PaddingS.toDp())) {
+            item.ToListItem(showDivider = false)
         }
     }
 }

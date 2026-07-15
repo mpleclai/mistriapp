@@ -14,7 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.thedullpencil.core.ui.components.InfoItem
-import com.thedullpencil.core.ui.components.ToInfoCard
+import com.thedullpencil.core.ui.components.ToListItem
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.Dimens.PaddingS
 import com.thedullpencil.core.ui.theme.toDp
@@ -52,6 +52,6 @@ private fun HomeInfoContent(uiState: HomeInfo) {
 private fun EmptyHomeScreen() {
     val selectProfile = stringResource(feature_home_select_profile)
     Card(Modifier.fillMaxWidth()) {
-        InfoItem(name = selectProfile, icon = Filled.Add).ToInfoCard(false)
+        InfoItem(name = selectProfile, icon = Filled.Add).ToListItem(false)
     }
 }

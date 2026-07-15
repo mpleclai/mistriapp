@@ -29,7 +29,7 @@ data class InfoItem(
 )
 
 @Composable
-fun InfoItem.ToInfoCard(showDivider: Boolean = true) {
+fun InfoItem.ToListItem(showDivider: Boolean = true) {
     ListItem(
         headlineContent = { name?.let { Text(it) } },
         modifier = modifier,

@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.thedullpencil.core.ui.components.InfoBlock
+import com.thedullpencil.core.ui.components.InfoCardListBlock
 import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.toDp
@@ -44,7 +44,7 @@ fun VillagerList(
     villagerList: List<Villager>,
     onVillagerClick: (String) -> Unit,
     modifier: Modifier = Modifier,
-) = InfoBlock(
+) = InfoCardListBlock(
     modifier.padding(PaddingL.toDp()),
     items = villagerList.toInfoItemList(onVillagerClick)
 )

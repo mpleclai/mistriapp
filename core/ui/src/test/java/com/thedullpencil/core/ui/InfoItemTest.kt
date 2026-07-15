@@ -11,8 +11,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import com.thedullpencil.core.ui.components.InfoItem
-import com.thedullpencil.core.ui.components.ToInfoCard
-import com.thedullpencil.core.ui.R
+import com.thedullpencil.core.ui.components.ToListItem
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -43,7 +42,7 @@ class InfoItemTest {
     @Test
     fun `empty InfoItem - nothing displays`() {
         composeTestRule.setContent {
-            emptyItem.ToInfoCard(showDivider = false)
+            emptyItem.ToListItem(showDivider = false)
         }
         nameNode.assertDoesNotExist()
         iconNode.assertDoesNotExist()
@@ -54,7 +53,7 @@ class InfoItemTest {
     @Test
     fun `full InfoItem - all elements display`() {
         composeTestRule.setContent {
-            fullItem.ToInfoCard(showDivider = true)
+            fullItem.ToListItem(showDivider = true)
         }
         nameNode.assertIsDisplayed()
         dividerNode.assertIsDisplayed()
