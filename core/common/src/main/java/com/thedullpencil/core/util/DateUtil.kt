@@ -83,7 +83,7 @@ fun String.toDisplayName(): String =
 fun List<String>?.toSeasonList(): List<Season> {
     if (this == null) return Season.entries
     return mapNotNull { value ->
-        when (value) {
+        when (value.lowercase()) {
             SPRING -> Spring
             SUMMER -> Summer
             FALL -> Fall

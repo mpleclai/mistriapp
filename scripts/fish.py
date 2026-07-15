@@ -11,6 +11,18 @@ FIELDS_WHERE_FALSE_MEANS_ALL = frozenset(
 )
 FIELDS_NORMALIZE_TO_ARRAY = frozenset({"water_type", "retrieval"})
 
+KNOWN_FIELDS = frozenset(
+    {
+        "item", "seasons", "hours", "water_type", "weather", "locations",
+        "size", "any_size", "legendary", "rarity", "retrieval",
+        "recipe", "is_chest", "perk_artifact", "has_perk", "bait_only",
+    }
+)
+
+
+def _build_output(key: str, merged: dict) -> dict:
+    return {f: merged.get(f) for f in KNOWN_FIELDS} | {"name": key}
+
 
 def _resolve(toml_data: dict) -> list[dict]:
     defaults = toml_data.get("default", {})
@@ -38,8 +50,7 @@ def _resolve(toml_data: dict) -> list[dict]:
         elif merged.get("size") is None or merged.get("size") is False:
             merged["size"] = "small"
 
-        merged["name"] = key
-        result.append(merged)
+        result.append(_build_output(key, merged))
     return result
 
 

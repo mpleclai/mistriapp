@@ -16,6 +16,6 @@ class VillagerRepositoryImpl @Inject constructor(
 
     override suspend fun getVillagers(): List<VillagerData> = allVillagers
 
-    override suspend fun getVillager(name: String): VillagerData =
-        allVillagers.first { it.name == name }
+    override suspend fun getVillager(name: String): VillagerData? =
+        allVillagers.firstOrNull { it.name == name }
 }

@@ -11,5 +11,5 @@ interface VillagerRepository {
     /**
      * Gets data for a specific villager
      */
-    suspend fun getVillager(name: String): VillagerData
+    suspend fun getVillager(name: String): VillagerData?
 }

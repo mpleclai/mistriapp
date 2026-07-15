@@ -24,7 +24,14 @@ class GetVillagerListUseCase @Inject constructor(
             with(villagerData) {
                 Villager(
                     name = name,
-                    birthday = getMistriappDate(birthdaySeason, birthdayDay) ?: Day(Spring, 1),
+                    birthday = getMistriappDate(birthdaySeason, birthdayDay)
+                        ?: Day(Spring, 1).also {
+                            // TODO maybe wire up some actual logging here
+                            System.err.println(
+                                "GetVillagerListUseCase: unrecognized season " +
+                                    "'$birthdaySeason' for '$name', fell back to Spring 1"
+                            )
+                        },
                     job = job,
                     dateable = dateable,
                     lovedGifts = lovedGifts,
@@ -43,5 +50,3 @@ class GetVillagerListUseCase @Inject constructor(
         )
     }
 }
-
-enum class SortField { NONE, NAME }

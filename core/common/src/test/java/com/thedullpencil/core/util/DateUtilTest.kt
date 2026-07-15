@@ -46,6 +46,18 @@ class DateUtilTest {
         assertEquals(expected, input.toDateString())
     }
 
+    @ParameterizedTest(name = "{0} → {1}")
+    @MethodSource("displayNameCases")
+    fun `toDisplayName transforms correctly`(input: String, expected: String) {
+        assertEquals(expected, input.toDisplayName())
+    }
+
+    @ParameterizedTest(name = "{0} → {1}")
+    @MethodSource("seasonListCases")
+    fun `toSeasonList resolves correctly`(input: List<String>?, expected: List<Season>) {
+        assertEquals(expected, input.toSeasonList())
+    }
+
     companion object {
         private val standardDay = Day(Summer, 12)
         private val firstDayYear = Day(Spring, FIRST_DAY)
@@ -115,6 +127,24 @@ class DateUtilTest {
             of(firstDateMonth, "Fall 1, Year 1"),
             of(lastDateYear1, "Winter 28, Year 1"),
             of(lastDateMonth, "Fall 28, Year 1"),
+        )
+
+        @JvmStatic
+        fun displayNameCases() = listOf(
+            of("bass", "Bass"),
+            of("treasure_box_wood", "Treasure Box Wood"),
+            of("basic_wood", "Basic Wood"),
+            of("smallmouth_bass", "Smallmouth Bass"),
+            of("unidentified_artifact", "Unidentified Artifact"),
+        )
+
+        @JvmStatic
+        fun seasonListCases() = listOf(
+            of(null, Season.entries),
+            of(listOf("spring"), listOf(Spring)),
+            of(listOf("summer", "fall"), listOf(Summer, Fall)),
+            of(listOf("winter", "summer"), listOf(Winter, Summer)),
+            of(emptyList<String>(), emptyList<Season>()),
         )
     }
 }
