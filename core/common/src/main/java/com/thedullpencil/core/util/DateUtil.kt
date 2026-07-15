@@ -77,9 +77,6 @@ fun getMistriappDate(string: String, day: Int): Day? = when (string.lowercase())
     else -> null
 }
 
-fun String.toDisplayName(): String =
-    split("_").joinToString(" ") { it.replaceFirstChar(Char::uppercaseChar) }
-
 fun List<String>?.toSeasonList(): List<Season> {
     if (this == null) return Season.entries
     return mapNotNull { value ->

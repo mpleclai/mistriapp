@@ -25,7 +25,7 @@ data class VillagerData(
     @SerialName("name") val name: String,
     @SerialName("birthday_season") val birthdaySeason: String,
     @SerialName("birthday_day") val birthdayDay: Int,
-    @SerialName("job") val job: String,
+    @SerialName("job") val job: String? = null,
     @SerialName("dateable") val dateable: Boolean = false,
     @SerialName("loved_gifts") val lovedGifts: List<String> = emptyList(),
     @SerialName("liked_gifts") val likedGifts: List<String> = emptyList(),

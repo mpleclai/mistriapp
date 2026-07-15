@@ -5,7 +5,7 @@ import com.thedullpencil.core.util.Day
 data class Villager(
     val name: String,
     val birthday: Day,
-    val job: String = "",
+    val job: String? = null,
     val dateable: Boolean = false,
     val lovedGifts: List<String> = emptyList(),
     val likedGifts: List<String> = emptyList(),

@@ -34,6 +34,7 @@ class GetVillagerListUseCase @Inject constructor(
                         },
                     job = job,
                     dateable = dateable,
+                    // TODO there's gonna need to be some more transformations here
                     lovedGifts = lovedGifts,
                     likedGifts = likedGifts,
                     hatedGift = hatedGift,

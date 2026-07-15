@@ -47,12 +47,6 @@ class DateUtilTest {
     }
 
     @ParameterizedTest(name = "{0} → {1}")
-    @MethodSource("displayNameCases")
-    fun `toDisplayName transforms correctly`(input: String, expected: String) {
-        assertEquals(expected, input.toDisplayName())
-    }
-
-    @ParameterizedTest(name = "{0} → {1}")
     @MethodSource("seasonListCases")
     fun `toSeasonList resolves correctly`(input: List<String>?, expected: List<Season>) {
         assertEquals(expected, input.toSeasonList())
@@ -127,15 +121,6 @@ class DateUtilTest {
             of(firstDateMonth, "Fall 1, Year 1"),
             of(lastDateYear1, "Winter 28, Year 1"),
             of(lastDateMonth, "Fall 28, Year 1"),
-        )
-
-        @JvmStatic
-        fun displayNameCases() = listOf(
-            of("bass", "Bass"),
-            of("treasure_box_wood", "Treasure Box Wood"),
-            of("basic_wood", "Basic Wood"),
-            of("smallmouth_bass", "Smallmouth Bass"),
-            of("unidentified_artifact", "Unidentified Artifact"),
         )
 
         @JvmStatic

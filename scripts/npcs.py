@@ -16,7 +16,7 @@ def _parse(filepath: Path) -> dict:
         "name": data["name"],
         "birthday_season": birthday["season"],
         "birthday_day": birthday["day"],
-        "job": data["job"],
+        "job": data.get("job"),
         "dateable": data["dateable"],
         "loved_gifts": data["loved_gifts"],
         "liked_gifts": data["liked_gifts"],
