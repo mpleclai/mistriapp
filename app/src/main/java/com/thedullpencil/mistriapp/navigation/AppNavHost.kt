@@ -8,6 +8,8 @@ import com.thedullpencil.fishing.navigation.fishingScreen
 import com.thedullpencil.home.navigation.homeScreen
 import com.thedullpencil.mistriapp.ui.AppState
 import com.thedullpencil.museum.navigation.museumScreen
+import com.thedullpencil.villagers.navigation.navigateToVillagerDetail
+import com.thedullpencil.villagers.navigation.villagerDetailScreen
 import com.thedullpencil.villagers.navigation.villagersScreen
 
 @Composable
@@ -15,7 +17,8 @@ fun AppNavHost(appState: AppState, modifier: Modifier = Modifier) {
     val navController = appState.navController
     NavHost(navController = navController, startDestination = Home, modifier = modifier) {
         homeScreen()
-        villagersScreen{}
+        villagersScreen(onVillagerClick = { navController.navigateToVillagerDetail(it) })
+        villagerDetailScreen(onBackClick = { navController.popBackStack() })
         museumScreen()
         fishingScreen()
     }

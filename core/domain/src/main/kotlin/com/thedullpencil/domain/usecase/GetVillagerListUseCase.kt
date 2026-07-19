@@ -2,7 +2,7 @@ package com.thedullpencil.domain.usecase
 
 import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
-import com.thedullpencil.core.util.getMistriappDate
+import com.thedullpencil.core.util.toDay
 import com.thedullpencil.data.model.VillagerData
 import com.thedullpencil.data.repository.VillagerRepository
 import com.thedullpencil.domain.model.Villager
@@ -24,7 +24,7 @@ class GetVillagerListUseCase @Inject constructor(
             with(villagerData) {
                 Villager(
                     name = name,
-                    birthday = getMistriappDate(birthdaySeason, birthdayDay)
+                    birthday = toDay(birthdaySeason, birthdayDay)
                         ?: Day(Spring, 1).also {
                             // TODO maybe wire up some actual logging here
                             System.err.println(
