@@ -10,10 +10,24 @@
     <!--    Accessibility-->
     <string name="core_ui_nav_menu_description">Navigation Menu</string>
     <string name="core_ui_account_description">User Profile</string>
+    <string name="core_ui_back_content_description">Back</string>
 
     <!--    testing strings-->
     <string name="core_ui_divider_tag">divider</string>
     <string name="core_ui_name_tag">name</string>
     <string name="core_ui_icon_tag">icon</string>
     <string name="core_ui_value_tag">value</string>
+
+    <!--    Villager detail-->
+    <string name="core_ui_villager_detail_birthday">Birthday</string>
+    <string name="core_ui_villager_detail_job">Job</string>
+    <string name="core_ui_villager_detail_dateable">Dateable</string>
+    <string name="core_ui_villager_detail_dateable_yes">Dateable: Yes</string>
+    <string name="core_ui_villager_detail_dateable_no">Dateable: No</string>
+    <string name="core_ui_villager_detail_loved_gifts">Loved Gifts</string>
+    <string name="core_ui_villager_detail_liked_gifts">Liked Gifts</string>
+    <string name="core_ui_villager_detail_hated_gift">Hated Gift</string>
+    <string name="core_ui_villager_detail_disliked_tags">Disliked Tags</string>
+    <string name="core_ui_villager_detail_none">None</string>
+    <string name="core_ui_villager_detail_not_found">Villager not found</string>
 </resources>

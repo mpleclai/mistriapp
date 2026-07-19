@@ -2,7 +2,7 @@ package com.thedullpencil.domain.usecase
 
 import com.thedullpencil.core.util.Day
 import com.thedullpencil.core.util.Season.Spring
-import com.thedullpencil.core.util.getMistriappDate
+import com.thedullpencil.core.util.toDay
 import com.thedullpencil.data.repository.ProfileRepository
 import com.thedullpencil.domain.model.Profile
 import kotlinx.coroutines.flow.Flow
@@ -25,7 +25,7 @@ class GetProfileUseCase @Inject constructor(
                         userId = userId,
                         name = name,
                         currentYear = year,
-                        currentDate = getMistriappDate(season, day) ?: Day(Spring, 1)
+                        currentDate = toDay(season, day) ?: Day(Spring, 1)
                     )
                 }
             )
