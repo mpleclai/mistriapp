@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.thedullpencil.domain.model.Villager
 import com.thedullpencil.domain.usecase.GetVillagerListUseCase
 import com.thedullpencil.domain.usecase.SortField.NONE
+import com.thedullpencil.villagers.VillagerViewState.Empty
+import com.thedullpencil.villagers.VillagerViewState.VillagersInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -17,7 +19,9 @@ class VillagerViewModel @Inject constructor(
     getVillagerListUseCase: GetVillagerListUseCase,
 ) : ViewModel() {
     val uiState: StateFlow<VillagerViewState> = getVillagerListUseCase(sortBy = NONE)
-        .map(VillagerViewState::VillagersInfo)
+        .map { list ->
+            if (list.isEmpty()) Empty else VillagersInfo(list)
+        }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),

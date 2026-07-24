@@ -3,6 +3,7 @@ package com.thedullpencil.domain.model
 import com.thedullpencil.core.util.Season
 
 data class Fish(
+    val id: String,
     val name: String,
     val item: String,
     val seasons: List<Season>,

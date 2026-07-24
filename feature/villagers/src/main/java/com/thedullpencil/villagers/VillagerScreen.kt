@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import com.thedullpencil.core.ui.components.EmptyListMessage
 import com.thedullpencil.core.ui.components.InfoCardListBlock
 import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
@@ -35,7 +36,7 @@ fun VillagerScreenContent(
     when (uiState) {
         is VillagersInfo -> VillagerList(uiState.villagers, onVillagerClick, modifier)
         is Loading -> CircularProgressIndicator()
-        is Empty -> VillagerList(emptyList(), onVillagerClick)
+        is Empty -> EmptyListMessage(modifier)
     }
 }
 

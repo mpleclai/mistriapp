@@ -11,6 +11,7 @@
     <string name="core_ui_nav_menu_description">Navigation Menu</string>
     <string name="core_ui_account_description">User Profile</string>
     <string name="core_ui_back_content_description">Back</string>
+    <string name="core_ui_unable_to_load_data">Unable to load data</string>
 
     <!--    testing strings-->
     <string name="core_ui_divider_tag">divider</string>
@@ -30,4 +31,17 @@
     <string name="core_ui_villager_detail_disliked_tags">Disliked Tags</string>
     <string name="core_ui_villager_detail_none">None</string>
     <string name="core_ui_villager_detail_not_found">Villager not found</string>
+
+    <!--    Fish detail-->
+    <string name="core_ui_fish_detail_seasons">Seasons</string>
+    <string name="core_ui_fish_detail_water_type">Water Type</string>
+    <string name="core_ui_fish_detail_weather">Weather</string>
+    <string name="core_ui_fish_detail_locations">Locations</string>
+    <string name="core_ui_fish_detail_size">Size</string>
+    <string name="core_ui_fish_detail_rarity">Rarity</string>
+    <string name="core_ui_fish_detail_retrieval">Retrieval</string>
+    <string name="core_ui_fish_detail_legendary">Legendary</string>
+    <string name="core_ui_fish_detail_perk_artifact">Perk Artifact</string>
+    <string name="core_ui_fish_detail_bait_only">Bait Only</string>
+    <string name="core_ui_fish_detail_not_found">Fish not found</string>
 </resources>
