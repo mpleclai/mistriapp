@@ -32,12 +32,12 @@ import com.thedullpencil.core.ui.R.string.core_ui_fish_detail_water_type
 import com.thedullpencil.core.ui.R.string.core_ui_fish_detail_weather
 import com.thedullpencil.core.ui.components.DetailInfoCard
 import com.thedullpencil.core.ui.components.DetailTopAppBar
-import com.thedullpencil.core.ui.components.InfoItem
 import com.thedullpencil.core.ui.components.NotFoundHandler
 import com.thedullpencil.core.ui.theme.Dimens.PaddingL
 import com.thedullpencil.core.ui.theme.Dimens.PaddingM
 import com.thedullpencil.core.ui.theme.toDp
 import com.thedullpencil.core.util.toDisplayName
+import com.thedullpencil.core.util.toStringList
 import com.thedullpencil.domain.model.Fish
 import com.thedullpencil.fishing.detail.FishingDetailViewState.Detail
 import com.thedullpencil.fishing.detail.FishingDetailViewState.Loading
@@ -63,60 +63,51 @@ fun FishingDetailScreen(
 private fun FishingDetailContent(
     fish: Fish,
     onBackClick: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Scaffold(
-        topBar = { DetailTopAppBar(fish.name, onBackClick) },
-        modifier = modifier,
-    ) { innerPadding ->
-        Column(
-            Modifier
-                .padding(innerPadding)
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = PaddingL.toDp(), vertical = PaddingM.toDp()),
-            verticalArrangement = spacedBy(PaddingM.toDp()),
-        ) {
-            DetailInfoCard(stringResource(core_ui_fish_detail_seasons)) {
-                Text(fish.seasons.joinToString(", "))
+    modifier: Modifier = Modifier
+) = Scaffold(
+    topBar = { DetailTopAppBar(fish.name, onBackClick) },
+    modifier = modifier,
+) { innerPadding ->
+    val seasonsLabel = stringResource(core_ui_fish_detail_seasons)
+    val waterTypeLabel = stringResource(core_ui_fish_detail_water_type)
+    val weatherLabel = stringResource(core_ui_fish_detail_weather)
+    val locationsLabel = stringResource(core_ui_fish_detail_locations)
+    val sizeLabel = stringResource(core_ui_fish_detail_size)
+    val rarityLabel = stringResource(core_ui_fish_detail_rarity)
+    val retrievalLabel = stringResource(core_ui_fish_detail_retrieval)
+    val legendaryLabel = stringResource(core_ui_fish_detail_legendary)
+    val perkArtifactLabel = stringResource(core_ui_fish_detail_perk_artifact)
+    val baitOnlyLabel = stringResource(core_ui_fish_detail_bait_only)
+
+    Column(
+        Modifier
+            .padding(innerPadding)
+            .verticalScroll(rememberScrollState())
+            .padding(horizontal = PaddingL.toDp(), vertical = PaddingM.toDp()),
+        verticalArrangement = spacedBy(PaddingM.toDp()),
+    ) {
+        with(fish) {
+            val weather = weather.ifEmpty { listOf("Any") }
+
+            if (locations.isNotEmpty()) {
+                DetailInfoCard(locationsLabel) { Text(locations.toStringList()) }
             }
-            DetailInfoCard(stringResource(core_ui_fish_detail_water_type)) {
-                Text(fish.waterType.joinToString(", ") { it.toDisplayName() })
-            }
-            DetailInfoCard(stringResource(core_ui_fish_detail_weather)) {
-                val display = fish.weather.ifEmpty { listOf("Any") }
-                Text(display.joinToString(", ") { it.toDisplayName() })
-            }
-            if (fish.locations.isNotEmpty()) {
-                DetailInfoCard(stringResource(core_ui_fish_detail_locations)) {
-                    Text(fish.locations.joinToString(", ") { it.toDisplayName() })
-                }
-            }
-            DetailInfoCard(stringResource(core_ui_fish_detail_size)) {
-                Text(fish.size.toDisplayName())
-            }
-            DetailInfoCard(stringResource(core_ui_fish_detail_rarity)) {
-                Text(fish.rarity.toDisplayName())
-            }
-            DetailInfoCard(stringResource(core_ui_fish_detail_retrieval)) {
-                Text(fish.retrieval.joinToString(", ") { it.toDisplayName() })
-            }
-            if (fish.legendary) {
-                LegendaryCard(stringResource(core_ui_fish_detail_legendary), true)
-            }
-            fish.perkArtifact?.let {
-                DetailInfoCard(stringResource(core_ui_fish_detail_perk_artifact)) {
-                    Text(it.toDisplayName())
-                }
-            }
-            if (fish.baitOnly) {
-                LegendaryCard(stringResource(core_ui_fish_detail_bait_only), true)
-            }
+            DetailInfoCard(seasonsLabel) { Text(seasons.map { it.toString() }.toStringList()) }
+            DetailInfoCard(waterTypeLabel) { Text(waterType.toStringList()) }
+            DetailInfoCard(weatherLabel) { Text(weather.toStringList()) }
+            DetailInfoCard(sizeLabel) { Text(size.toDisplayName()) }
+            DetailInfoCard(rarityLabel) { Text(rarity.toDisplayName()) }
+            DetailInfoCard(retrievalLabel) { Text(retrieval.toStringList()) }
+            perkArtifact?.let { DetailInfoCard(perkArtifactLabel) { Text(it.toDisplayName()) } }
+            if (legendary) BooleanCard(legendaryLabel, true)
+            if (baitOnly) BooleanCard(baitOnlyLabel, true)
         }
     }
 }
 
+
 @Composable
-private fun LegendaryCard(title: String, active: Boolean) {
+private fun BooleanCard(title: String, active: Boolean) {
     val icon = if (active) Icons.Filled.Check else Icons.Filled.Close
     val tint = if (active) colorScheme.primary else colorScheme.error
     DetailInfoCard(title) {
