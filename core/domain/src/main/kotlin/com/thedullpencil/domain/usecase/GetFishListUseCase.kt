@@ -22,6 +22,7 @@ class GetFishListUseCase @Inject constructor(
         val fish = fishRepository.getAllFish().map { fishData: FishData ->
             with(fishData) {
                 Fish(
+                    id = name,
                     name = name.toDisplayName(),
                     item = item,
                     seasons = seasons.toSeasonList(),

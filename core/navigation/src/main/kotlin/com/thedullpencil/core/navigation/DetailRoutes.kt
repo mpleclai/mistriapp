@@ -9,4 +9,10 @@ data class VillagerDetail(val villagerName: String) {
     }
 }
 //@Serializable data class MuseumDetail(val itemId: String) {}
-//@Serializable data class FishingDetail(val fishName: String) {}
+
+@Serializable
+data class FishingDetail(val fishName: String) {
+    companion object {
+        const val NAME_ARG = "fishName"
+    }
+}

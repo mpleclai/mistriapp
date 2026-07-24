@@ -68,6 +68,7 @@ class GetFishListUseCaseTest {
 
         assertEquals(
             Fish(
+                id = NAME_B,
                 name = "Bass",
                 item = NAME_B,
                 seasons = listOf(Spring, Fall),
